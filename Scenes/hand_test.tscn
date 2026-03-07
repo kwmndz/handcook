@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dcarbvgxecx57"]
+
+[ext_resource type="Script" uid="uid://jpvdphdjtgoc" path="res://Scripts/hand.gd" id="1_6oimr"]
+
+[node name="Node3D" type="Node3D" unique_id=1317780437]
+
+[node name="Hand" type="Node3D" parent="." unique_id=1650071059]
+script = ExtResource("1_6oimr")
+
+[node name="hand_mesh" type="CSGBox3D" parent="Hand" unique_id=61397808]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0, 0)
+size = Vector3(0.07357788, 0.06385803, 0.08303833)
+
+[connection signal="on_action" from="Hand" to="Hand" method="_on_on_action"]
