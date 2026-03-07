@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bwksb8wdcjjss"]
+[gd_scene format=3 uid="uid://cqh0uhfm3iwgj"]
 
-[ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/kevin_test/test_main.gd" id="1_ygy31"]
-[ext_resource type="PackedScene" path="res://Assets/lettuce.tscn" id="2_ygy31"]
-[ext_resource type="PackedScene" path="res://Assets/workstation.tscn" id="4_t7cfm"]
+[ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/kevin_test/test_main.gd" id="1_frq2i"]
+[ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/lettuce.tscn" id="2_ygy31"]
+[ext_resource type="PackedScene" path="res://Assets/scenes/workstation.tscn" id="4_t7cfm"]
 [ext_resource type="PackedScene" uid="uid://dkn8jdi6a0u30" path="res://Assets/Mouse_Hand.tscn" id="4_ygy31"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
@@ -22,7 +22,7 @@ glow_enabled = true
 size = Vector3(9.297119, 0.20922852, 8.838867)
 
 [node name="test_main" type="Node3D" unique_id=483621530]
-script = ExtResource("1_ygy31")
+script = ExtResource("1_frq2i")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31079463]
 environment = SubResource("Environment_4mkt6")
