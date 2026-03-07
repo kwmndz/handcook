@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://btlhpy2oi0pjf"]
+[gd_scene format=3 uid="uid://d0krehxoabvu8"]
 
-[ext_resource type="PackedScene" uid="uid://bjwp0vxy15d7l" path="res://Assets/cutting_board.tscn" id="1_sncti"]
-[ext_resource type="PackedScene" uid="uid://bkenfv2m65dww" path="res://Assets/stove.tscn" id="2_jgxeg"]
+[ext_resource type="PackedScene" uid="uid://dl4ve5fyqr1hc" path="res://Assets/cutting_board.tscn" id="1_sncti"]
+[ext_resource type="PackedScene" path="res://Assets/stove.tscn" id="2_jgxeg"]
 
 [node name="Workstation" type="CSGCombiner3D" unique_id=73379149]
 use_collision = true

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkn8jdi6a0u30"]
 
-[ext_resource type="Script" uid="uid://eb3uounsvsx" path="res://Scripts/mouse_hand.gd" id="1_r4gnf"]
+[ext_resource type="Script" uid="uid://eb3uounsvsx" path="res://Scripts/kevin_test/mouse_hand.gd" id="1_r4gnf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4gnf"]
 albedo_color = Color(1, 0, 0.1882353, 1)
