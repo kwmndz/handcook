@@ -4,12 +4,14 @@ import time
 
 import tracker as track
 import camera as cam
+import conn
 
 recognizer = track.init_recognizer()
 cap = cam.init_camera()
 start_time = time.monotonic()
+sock = conn.init_connection()
 
-# DEBUG: timing tests
+# DEBUG: timing tests (not implemented)
 # millisecond period between intervals
 DEBUG_INTERVAL = 100 # 10 FPS
 last_debug_timestamp = int(start_time * 1000)

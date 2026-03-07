@@ -49,7 +49,6 @@ def init_recognizer():
     return recognizer
 
 
-
 # TODO: add hand position calc
 def process_result(result):
     result_proc = {}

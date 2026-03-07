@@ -1,10 +1,67 @@
-# Godot 4+ specific ignores
+# Godot-specific ignores
 .godot/
-/android/
+export.cfg
+export_credentials.cfg
 
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
+
+# Builds
+*.apk
+*.ap_
+*.bc
+*.bin
+*.br
+*.brotli
+*.cas
+*.dll
+*.dylib
+*.exe
+*.ghz
+*.h
+*.jgz
+*.js
+*.json
+*.pck
+*.pe
+*.pz
+*.s3tc
+*.so
+*.stx
+*.svg.gen
+*.tcz
+*.tgz
+*.uid
+*.wasm
+*.webp.gen
+*.win.zip
+*.wz
+*.zip
+/build/
+/export/
+
+# OS-specific ignores
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
 
 
 # Python specific 
+*.task
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
