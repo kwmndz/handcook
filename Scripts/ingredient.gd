@@ -1,6 +1,6 @@
 class_name Ingredient
 
-extends Node3D
+extends RigidBody3D
 
 enum State {raw, chopped, cooked, overcooked}
 

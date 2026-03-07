@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/test_main.gd" id="1_frq2i"]
 [ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/lettuce.tscn" id="2_ygy31"]
-[ext_resource type="PackedScene" uid="uid://dcarbvgxecx57" path="res://Scenes/hand_test.tscn" id="3_t7cfm"]
+[ext_resource type="PackedScene" uid="uid://dkn8jdi6a0u30" path="res://Assets/Mouse_Hand.tscn" id="4_ygy31"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +17,9 @@ sky = SubResource("Sky_q1kdl")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygy31"]
+size = Vector3(9.297119, 0.20922852, 8.838867)
+
 [node name="test_main" type="Node3D" unique_id=483621530]
 script = ExtResource("1_frq2i")
 
@@ -29,12 +32,18 @@ shadow_enabled = true
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=87766717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48958325, -0.4165039, 1.3834579)
+use_collision = true
 size = Vector3(9.565811, 0.16699219, 8.889908)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1532116525]
+shape = SubResource("BoxShape3D_ygy31")
 
 [node name="Lettuce" parent="." unique_id=951881784 instance=ExtResource("2_ygy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7099347, 2.9968295)
 
-[node name="hand_test" parent="." unique_id=1317780437 instance=ExtResource("3_t7cfm")]
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22921085, 1.58404, 4.5459375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22721183, -0.08977401, 5.153267)
+
+[node name="MouseHand" parent="." unique_id=60813729 node_paths=PackedStringArray("camera") instance=ExtResource("4_ygy31")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15108824, 1.611028, 3.81941)
+camera = NodePath("../Camera3D")

@@ -2,23 +2,32 @@
 
 [ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/lettuce.gd" id="1_mmgdw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gyvq"]
-albedo_color = Color(0.4293482, 0.9714462, 0.32880723, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmgdw"]
+albedo_color = Color(0.13333334, 1, 0.043137256, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq1q5"]
-albedo_color = Color(0.9553619, 0.8269859, 0.25547653, 1)
+[sub_resource type="SphereMesh" id="SphereMesh_03dh0"]
+material = SubResource("StandardMaterial3D_mmgdw")
 
-[node name="Lettuce" type="Node3D" unique_id=951881784 node_paths=PackedStringArray("default_visual", "chopped_visual")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03dh0"]
+albedo_color = Color(1, 1, 0.101960786, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0kxm0"]
+material = SubResource("StandardMaterial3D_03dh0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mmgdw"]
+
+[node name="Lettuce" type="RigidBody3D" unique_id=1563948761 node_paths=PackedStringArray("default_visual", "chopped_visual")]
 script = ExtResource("1_mmgdw")
 default_visual = NodePath("default-lettuce")
 chopped_visual = NodePath("chopped-lettuce")
 isChoppable = true
 
-[node name="default-lettuce" type="CSGSphere3D" parent="." unique_id=1636719909]
-radius = 0.22059852
-material = SubResource("StandardMaterial3D_8gyvq")
+[node name="default-lettuce" type="MeshInstance3D" parent="." unique_id=486756656]
+mesh = SubResource("SphereMesh_03dh0")
 
-[node name="chopped-lettuce" type="CSGSphere3D" parent="." unique_id=714633100]
+[node name="chopped-lettuce" type="MeshInstance3D" parent="." unique_id=805668731]
 visible = false
-radius = 0.22059852
-material = SubResource("StandardMaterial3D_sq1q5")
+mesh = SubResource("SphereMesh_0kxm0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=237941037]
+shape = SubResource("SphereShape3D_mmgdw")

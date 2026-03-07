@@ -1,7 +1,7 @@
 extends Ingredient
 
-@export var default_visual: Node3D
-@export var chopped_visual: Node3D
+@export var default_visual: MeshInstance3D
+@export var chopped_visual: MeshInstance3D 
 
 func _ready() -> void:
 	isChoppable = true
