@@ -16,6 +16,8 @@ material = SubResource("StandardMaterial3D_03dh0")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mmgdw"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_03dh0"]
+
 [node name="Lettuce" type="RigidBody3D" unique_id=1563948761 node_paths=PackedStringArray("default_visual", "chopped_visual")]
 script = ExtResource("1_mmgdw")
 default_visual = NodePath("default-lettuce")
@@ -31,3 +33,9 @@ mesh = SubResource("SphereMesh_0kxm0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=237941037]
 shape = SubResource("SphereShape3D_mmgdw")
+
+[node name="InteractionCollision" type="Area3D" parent="." unique_id=511460840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionCollision" unique_id=1708048643]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_03dh0")

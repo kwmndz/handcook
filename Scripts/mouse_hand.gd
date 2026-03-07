@@ -18,9 +18,7 @@ var hovered_ingredient: Ingredient = null
 func _ready() -> void:
 	if detector == null:
 		detector = $Area3D
-
-	detector.body_entered.connect(_on_body_entered)
-	detector.body_exited.connect(_on_body_exited)
+	
 	detector.area_entered.connect(_on_area_entered)
 	detector.area_exited.connect(_on_area_exited)
 	
@@ -65,6 +63,7 @@ func _on_body_exited(body: Node) -> void:
 		on_hover.emit(null)
 
 func _on_area_entered(area: Area3D) -> void:
+	print(area)
 	var parent = area.get_parent()
 	if parent is Ingredient:
 		hovered_ingredient = parent
