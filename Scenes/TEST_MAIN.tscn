@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cqh0uhfm3iwgj"]
+
+[ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/test_main.gd" id="1_frq2i"]
+[ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/lettuce.tscn" id="2_ygy31"]
+[ext_resource type="PackedScene" uid="uid://dcarbvgxecx57" path="res://Scenes/hand_test.tscn" id="3_t7cfm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_q1kdl"]
+sky_material = SubResource("ProceduralSkyMaterial_q6vbx")
+
+[sub_resource type="Environment" id="Environment_4mkt6"]
+background_mode = 2
+sky = SubResource("Sky_q1kdl")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="test_main" type="Node3D" unique_id=483621530]
+script = ExtResource("1_frq2i")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31079463]
+environment = SubResource("Environment_4mkt6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=102446257]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 2.6540923, 0)
+shadow_enabled = true
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=87766717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48958325, -0.4165039, 1.3834579)
+size = Vector3(9.565811, 0.16699219, 8.889908)
+
+[node name="Lettuce" parent="." unique_id=951881784 instance=ExtResource("2_ygy31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7099347, 2.9968295)
+
+[node name="hand_test" parent="." unique_id=1317780437 instance=ExtResource("3_t7cfm")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22921085, 1.58404, 4.5459375)

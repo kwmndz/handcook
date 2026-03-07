@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://lmxc0tbu2oyl"]
+
+[ext_resource type="Script" uid="uid://c62llqybu3s4o" path="res://Scripts/ingredient.gd" id="1_budfg"]
+[ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/lettuce.gd" id="2_sq1q5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gyvq"]
+albedo_color = Color(0.4293482, 0.9714462, 0.32880723, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sq1q5"]
+albedo_color = Color(0.9553619, 0.8269859, 0.25547653, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1206308315]
+
+[node name="Ingredient" type="Node3D" parent="." unique_id=798357570]
+script = ExtResource("1_budfg")
+
+[node name="Lettuce" type="Node3D" parent="." unique_id=534171868 node_paths=PackedStringArray("default_visual", "chopped_visual")]
+script = ExtResource("2_sq1q5")
+default_visual = NodePath("default-lettuce")
+chopped_visual = NodePath("chopped-lettuce")
+
+[node name="default-lettuce" type="CSGSphere3D" parent="Lettuce" unique_id=1080527866]
+radius = 0.22059852
+material = SubResource("StandardMaterial3D_8gyvq")
+
+[node name="chopped-lettuce" type="CSGSphere3D" parent="Lettuce" unique_id=1033894851]
+radius = 0.22059852
+material = SubResource("StandardMaterial3D_sq1q5")
