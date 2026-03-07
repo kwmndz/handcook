@@ -1,18 +1,37 @@
 # Process Result Data Format
-- valid | int
-    - 0 for valid packet 1 for not valid
-- gesture | GESTURE_ENUM
-    - PINCH: 0
-    - FIST: 1
-    - OPEN: 2
-    - NONE: 3
-- hand_type | HAND_TYPE_ENUM
-    - LEFT_HAND | 0
-    - RIGHT_HAND | 1
-- hand_position
+- gesture (g) | GESTURE_ENUM
+    - NONE: 0
+    - PINCH: 1
+    - FIST: 2
+    - OPEN: 3
+- hand_type (ht) | HAND_TYPE_ENUM
+    - LEFT_HAND: 0
+    - RIGHT_HAND: 1
+- hand_position (hp)
     - Vector2(float, float)
         - x, y coordinates
 
+- valid | int | dont need
+    - 0 for valid packet 1 for not valid
+- hand_landmarks | Vector2[] | dont need
+    - positions for each landmark
+
+
+## Example:
+```py
+process_result_out = {
+    "valid": True,
+    "gesture": "THUMBS_UP",
+    "gesture_score": .67,
+    "hand_type": "LEFT",
+    "hand_position": (0, 0), # (x,y)
+
+    # NOT NECESSARY FOR GODOT?
+    "hand_landmarks": [
+        (.5, .5),
+    ]
+}
+```
 
 # Notes on Params
 ```py

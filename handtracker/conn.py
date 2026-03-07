@@ -5,6 +5,13 @@ import time
 UDP_IP = "127.0.0.1"
 UDP_PORT = 5005
 
+# PROCESS RESULT OUTPUT
+fake_data = {
+    "gesture": 0,
+    "hand_type"
+    "hand_position": (0, 0), # (x,y)
+}
+
 
 def init_connection():
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

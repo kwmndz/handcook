@@ -1,32 +1,13 @@
 import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
-from camera import RES_WIDTH, RES_HEIGHT
 
-import time
 
 # load gesture tracking model
 MODEL_PATH = "gesture_recognizer.task"
 # params
 MAX_HANDS = 1
 CAMERA = 0
-
-# PROCESS RESULT OUTPUT
-process_result_out = {
-    "valid": True,
-    "gesture": "THUMBS_UP",
-    "gesture_score": .67,
-    "hand_type": "LEFT",
-
-    # TODO: have to add this calculation
-    "hand_position": (0, 0), # (x,y)
-
-    # maybe necessary?
-    # size of this list will be 21
-    "hand_landmarks": [
-        (.5, .5),
-    ]
-}
 
 def init_recognizer():
     # configure the model
@@ -49,7 +30,9 @@ def init_recognizer():
     return recognizer
 
 
-# TODO: add hand position calc
+def serialize_gesture(top_gesture, score):
+    return 0
+
 def process_result(result):
     result_proc = {}
     # TRANSLATE RESULTS
@@ -57,14 +40,20 @@ def process_result(result):
         result_proc["valid"] = True
         # PROCESS HANDS
         for hand_index, hand_landmarks in enumerate(result.hand_landmarks):
-            hl_pos = []
             # HAND LANDMARKS
+            hl_pos = []
+            # calculate hand position by taking average of landmarks
+            hand_x = 0
+            hand_y = 0
             for landmark in hand_landmarks:
-                x = float(landmark.x * RES_WIDTH)
-                y = float(landmark.y * RES_HEIGHT)
+                x = float(landmark.x)
+                y = float(landmark.y)
+                hand_x += x / 21
+                hand_y += y / 21
                 hl_pos.append( (x,y,) )
 
             result_proc["hand_landmarks"] = hl_pos
+            result_proc["hand_position"] = (hand_x, hand_y)
 
             # GESTURES
             if result.gestures and len(result.gestures) > hand_index:
@@ -86,3 +75,15 @@ def process_result(result):
     # DEBUG show current processed frame
     print("DEBUG:\n", result_proc, end="\n\n", sep="")
     return result_proc
+
+
+# make process data smaller for easier send
+# look at the doc for format of the data
+def serialize_proc_data(proc):
+    if not proc["valid"]:
+        return None
+    res = {}
+    res["g"] = serialize_gesture(proc["gesture"], proc["gesture_score"])
+    res["ht"] = 0 if proc["hand_type"] == "Left" else 1
+    res["hp"] = proc["hand_position"]
+    return res

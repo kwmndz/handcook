@@ -30,11 +30,17 @@ while True:
     result = recognizer.recognize_for_video(mp_image, frame_timestamp)
     result_proc = track.process_result(result)
 
+    # SEND TO GODOT (if got data)
+    data = track.serialize_proc_data(result_proc)
+    if data:
+        conn.send_data(sock, data)
+
+    # DEBUG
     # if (frame_timestamp - last_debug_timestamp) > DEBUG_INTERVAL and result_proc["valid"]:
     if True and result_proc["valid"]:
         # mark each landmark
         for x, y in result_proc["hand_landmarks"]:
-            cv2.circle(frame, (int(x),int(y)), 4, (0,255,0), -1)
+            cv2.circle(frame, (int(x*cam.RES_WIDTH),int(y*cam.RES_HEIGHT)), 4, (0,255,0), -1)
         # output current gesture
         cv2.putText(
              frame,
@@ -76,8 +82,8 @@ while True:
         # )
         last_debug_timestamp = frame_timestamp
 
+    # UPDATE CV2
     cv2.imshow("Hand Tracker", frame)
-    # display updated frame (with hand landmark pos + gesture)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
