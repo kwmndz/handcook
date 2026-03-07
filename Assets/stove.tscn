@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bkenfv2m65dww"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owahk"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fsk40"]
+size = Vector3(0.86035156, 0.048583984, 0.8095703)
+
+[node name="stove" type="CSGBox3D" unique_id=1575896227]
+size = Vector3(0.84936523, 0.046, 0.80859375)
+material = SubResource("StandardMaterial3D_owahk")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1468190352]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1350432595]
+shape = SubResource("BoxShape3D_fsk40")

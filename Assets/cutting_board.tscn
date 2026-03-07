@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bjwp0vxy15d7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcbj8"]
+albedo_color = Color(0.6710263, 0.37253308, 0.15243027, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlc2o"]
+size = Vector3(0.6542969, 0.064453125, 0.36132813)
+
+[node name="cuttingBoard" type="CSGBox3D" unique_id=1888764547]
+size = Vector3(0.65319824, 0.046, 0.36694336)
+material = SubResource("StandardMaterial3D_gcbj8")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1223434873]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=571165699]
+shape = SubResource("BoxShape3D_qlc2o")
