@@ -59,7 +59,9 @@ def process_result(result):
             
             # test a few hand pos to see what is best
             result_proc["hand_landmarks"] = hl_pos
-            result_proc["hand_position"] = cal.get_avg([hl_pos[i] for i in [0, 5, 9, 13, 17]]) # purple, avg palm landmarks
+
+            palm_avg = cal.get_avg([hl_pos[i] for i in [0, 5, 9, 13, 17]]) # purple, avg palm landmarks
+            result_proc["hand_position"] = (palm_avg[0], palm_avg[1], palm_avg[2])
             # other methods for hand pos
             # result_proc["hand_position"] = hl_pos[0]
             # result_proc["hand_position"] = get_avg([i for i in range])
@@ -89,12 +91,13 @@ def process_result(result):
 # make process data smaller for easier send
 # look at the doc for format of the data
 def serialize_proc_data(proc, s: sm.HandSmoother):
-    if not proc["valid"]:
-        return None
     res = {}
     res["g"] = serialize_gesture(proc["gesture"], proc["gesture_score"])
     res["ht"] = 0 if proc["hand_type"] == "Left" else 1
+
+
     res["hp"] = cal.normalize( *proc["hand_position"] )
+    res["hp"] = s.update(*res["hp"])
 
 
     # updated handposition and bound checker

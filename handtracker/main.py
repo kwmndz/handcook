@@ -41,7 +41,7 @@ while True:
         cam.debug_landmarks(frame, result_proc)
         # DEBUG: calibration info
         # print("Calibration:", cur_cal.__dict__)
-        
+
         # send to Godot
         data = track.serialize_proc_data(result_proc, smoother)
         conn.send_data(sock, data)
@@ -54,24 +54,11 @@ while True:
     # UPDATE CV2 + INPUT HANDLING
     cv2.imshow("Hand Tracker", frame)
     key = cv2.waitKey(1) & 0xFF
-
     if key == ord('q'):
         break
-
-    # elif key == ord('r'):
-    #     cur_state = State.FIND_BOTTOM_LEFT
-    #     # reset these as well
-    #     cur_cal = cal.Calibration() # also sets calibrated to false
-    #     smoother = sm.HandSmoother() # base values
-    # elif key == ord(' '):
-    #     if cur_state == State.FIND_BOTTOM_LEFT:
-    #         cur_cal.update_min(*result_proc["hand_position"])
-    #         cur_state = State.FIND_TOP_RIGHT
-            
-    #     elif cur_state == State.FIND_TOP_RIGHT:
-    #         cur_cal.update_max(*result_proc["hand_position"])
-    #         cur_cal.calibrated = True
-    #         cur_state = State.CALIBRATED
+    if key == ord('r'):
+        smoother = sm.HandSmoother()
+        start_time = time.monotonic()
 
 
 # cleanup

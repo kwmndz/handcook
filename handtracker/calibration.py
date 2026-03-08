@@ -17,8 +17,17 @@ class HandSmoother:
 # top left is 0,0
 # bottom right is 1,1
 # z is inverted
+
+MAX_Z = 0.01
+MIN_Z = 0.07
+
 def normalize(x, y, z):
     x = max(0, min(1, x))
-    y = 1-max(0, min(1, y))
+    y = max(0, min(1, y))
+
     z = -1 * z
-    return (x,y,z,)
+    z = (z - MIN_Z) / (MAX_Z - MIN_Z)
+    z = 1-max(0, min(1,z))
+
+    # godot axes are weird
+    return (x,z,y,)
