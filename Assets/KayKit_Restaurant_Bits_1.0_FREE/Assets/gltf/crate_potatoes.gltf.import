@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2q6w02mrabv2"
-path="res://.godot/imported/crate_potatoes.gltf-57df6131faf0a7fdbb1dfa24467b5f29.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_potatoes.gltf"
-dest_files=["res://.godot/imported/crate_potatoes.gltf-57df6131faf0a7fdbb1dfa24467b5f29.scn"]
 
 [params]
 

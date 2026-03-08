@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://duwqwaa6gjshq"
-path="res://.godot/imported/shelf_papertowel_decorated.gltf-6757211d38fcca9cd93df1dbda5a749f.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/shelf_papertowel_decorated.gltf"
-dest_files=["res://.godot/imported/shelf_papertowel_decorated.gltf-6757211d38fcca9cd93df1dbda5a749f.scn"]
 
 [params]
 

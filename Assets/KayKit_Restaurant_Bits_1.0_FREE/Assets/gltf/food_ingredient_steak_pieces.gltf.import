@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcxcdox2epurh"
-path="res://.godot/imported/food_ingredient_steak_pieces.gltf-2ab654b3c40d56c87afbd1da818c207e.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_steak_pieces.gltf"
-dest_files=["res://.godot/imported/food_ingredient_steak_pieces.gltf-2ab654b3c40d56c87afbd1da818c207e.scn"]
 
 [params]
 

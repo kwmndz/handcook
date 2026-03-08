@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bkgsuv44or4rr"
-path="res://.godot/imported/stew_bowl.gltf-0ef7fe85754469f8f25830b0141fb481.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/stew_bowl.gltf"
-dest_files=["res://.godot/imported/stew_bowl.gltf-0ef7fe85754469f8f25830b0141fb481.scn"]
 
 [params]
 

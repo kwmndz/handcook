@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bl6dv1o8110rn"
-path="res://.godot/imported/stove_multi.gltf-e6ef31d33f5111484c48b041ad736197.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/stove_multi.gltf"
-dest_files=["res://.godot/imported/stove_multi.gltf-e6ef31d33f5111484c48b041ad736197.scn"]
 
 [params]
 

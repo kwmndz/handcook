@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b0g5vu4lg5sod"
-path="res://.godot/imported/kitchentable_sink.gltf-6fbe8ae29063b3547d55ebb3c521d1fc.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/kitchentable_sink.gltf"
-dest_files=["res://.godot/imported/kitchentable_sink.gltf-6fbe8ae29063b3547d55ebb3c521d1fc.scn"]
 
 [params]
 

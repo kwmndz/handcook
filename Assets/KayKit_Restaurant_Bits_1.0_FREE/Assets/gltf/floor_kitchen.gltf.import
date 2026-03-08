@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b45s7bovafgwt"
-path="res://.godot/imported/floor_kitchen.gltf-ae6bd884360c71effaf2bc7ef27ae9ee.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/floor_kitchen.gltf"
-dest_files=["res://.godot/imported/floor_kitchen.gltf-ae6bd884360c71effaf2bc7ef27ae9ee.scn"]
 
 [params]
 

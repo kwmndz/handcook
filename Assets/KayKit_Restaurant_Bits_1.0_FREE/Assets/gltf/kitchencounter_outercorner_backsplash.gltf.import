@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://coh13mrtnare2"
-path="res://.godot/imported/kitchencounter_outercorner_backsplash.gltf-5497b03b27e09fcac426aad73617c715.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/kitchencounter_outercorner_backsplash.gltf"
-dest_files=["res://.godot/imported/kitchencounter_outercorner_backsplash.gltf-5497b03b27e09fcac426aad73617c715.scn"]
 
 [params]
 

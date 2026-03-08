@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dkc781yt64ya1"
-path="res://.godot/imported/fridge_A_decorated.gltf-04572a1b2ba6cc01c9e859529030aed4.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/fridge_A_decorated.gltf"
-dest_files=["res://.godot/imported/fridge_A_decorated.gltf-04572a1b2ba6cc01c9e859529030aed4.scn"]
 
 [params]
 
