@@ -105,7 +105,7 @@ func calculate_y_state(y):
 			if y > down_exit:
 				y_state = YState.NEUTRAL
 
-
+var last_applied_gesture := ""
 func _process(delta: float) -> void:
 	if $Server.hand_type == "LEFT":
 		scale.x = -1 
@@ -122,16 +122,18 @@ func _process(delta: float) -> void:
 	if camera == null:
 		return
 	# process the gesture
-	if $Server.cur_gesture == "FIST":
-		if (hovered_tool):
-			pick_up_tool(hovered_tool)
-		if (hovered_ingredient):
-			pick_up_ingredient(hovered_ingredient)
-	if $Server.cur_gesture == "OPEN":
-		if (held_tool != null):
-			drop_tool(scene)
-		if held_ingredient != null:
-			drop_ingredient(scene)
+	if $Server.cur_gesture != last_applied_gesture:
+		if $Server.cur_gesture == "FIST":
+			if (hovered_tool):
+				pick_up_tool(hovered_tool)
+			if (hovered_ingredient):
+				pick_up_ingredient(hovered_ingredient)
+		if $Server.cur_gesture == "OPEN":
+			if (held_tool != null):
+				drop_tool(scene)
+			if held_ingredient != null:
+				drop_ingredient(scene)
+		last_applied_gesture = $Server.cur_gesture
 	
 	# move the controller
 	var target_pos = place_in_box($Server.hand_rel_pos)
