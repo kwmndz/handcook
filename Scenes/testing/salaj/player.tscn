@@ -2,34 +2,39 @@
 
 [ext_resource type="Script" uid="uid://eb3uounsvsx" path="res://Scripts/kevin_test/mouse_hand.gd" id="1_r4gnf"]
 [ext_resource type="Script" uid="uid://b18nxvxdq4qpg" path="res://Scripts/player/handtrack_server.gd" id="2_f6wga"]
+[ext_resource type="PackedScene" uid="uid://d03wobh5pv4q5" path="res://Assets/hand/fist.tscn" id="2_kdvkf"]
+[ext_resource type="PackedScene" uid="uid://bxtebx5txntc7" path="res://Assets/hand/open.tscn" id="2_x0bt0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4gnf"]
 albedo_color = Color(1, 0, 0.1882353, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_r4gnf"]
-size = Vector3(0.018554688, 0.01171875, 0.10131836)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kdvkf"]
+radius = 0.049804688
+height = 0.15846252
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f6wga"]
-size = Vector3(2.148056, 1.0378418, 1.3931885)
-
-[node name="Player" type="Area3D" unique_id=1352912784 node_paths=PackedStringArray("hold_point")]
+[node name="Player" type="Node3D" unique_id=180816334 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("1_r4gnf")
 hold_point = NodePath("HoldPoint")
 
+[node name="open" parent="." unique_id=1987764125 instance=ExtResource("2_x0bt0")]
+transform = Transform3D(-2.6226832e-10, 0, -0.006, 0, 0.006, 0, 0.006, 0, -2.6226832e-10, 0, 0, 0)
+
+[node name="fist" parent="." unique_id=1302813499 instance=ExtResource("2_kdvkf")]
+visible = false
+
 [node name="hand_mesh" type="CSGBox3D" parent="." unique_id=787178696]
+visible = false
 size = Vector3(0.054, 0.036, 0.309)
 material = SubResource("StandardMaterial3D_r4gnf")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=761051913]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=345407295]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("BoxShape3D_r4gnf")
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.079582214, 2.220446e-15)
+shape = SubResource("CapsuleShape3D_kdvkf")
 
 [node name="HoldPoint" type="Node3D" parent="." unique_id=155067972]
 
 [node name="Server" type="Node" parent="." unique_id=1127825856]
 script = ExtResource("2_f6wga")
-
-[node name="Bound" type="CollisionShape3D" parent="." unique_id=1494020175]
-shape = SubResource("BoxShape3D_f6wga")

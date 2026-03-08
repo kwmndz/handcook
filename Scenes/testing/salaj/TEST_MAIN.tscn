@@ -23,6 +23,9 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_ygy31"]
 size = Vector3(9.297119, 0.20922852, 8.838867)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_koan0"]
+size = Vector3(2.9107294, 0.63253784, 1.8171716)
+
 [node name="test_main" type="Node3D" unique_id=483621530]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=31079463]
@@ -41,10 +44,9 @@ size = Vector3(9.565811, 0.16699219, 8.889908)
 shape = SubResource("BoxShape3D_ygy31")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
-transform = Transform3D(1, 0, 0, 0, 0.9490412, 0.3151522, 0, -0.3151522, 0.9490412, -3.0664206, 1.1204576, 5.138948)
+transform = Transform3D(1, 0, 0, 0, 0.8290571, 0.55916405, 0, -0.55916405, 0.8290571, 0, 1.8750588, 1.9536276)
 
 [node name="Workstation" parent="." unique_id=73379149 instance=ExtResource("4_cd61o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6288733, 0, 4.2805266)
 
 [node name="stove" parent="Workstation" unique_id=1575896227 instance=ExtResource("5_osixi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.020914078)
@@ -53,15 +55,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.02
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893573)
 
 [node name="Knife" parent="." unique_id=1230016347 instance=ExtResource("7_mwgec")]
-transform = Transform3D(0.016322998, 0.2995556, 0, -0.2995556, 0.016322998, 0, 0, 0, 0.29999998, -2.5290115, 0.7389641, 4.412452)
+transform = Transform3D(0.016322998, 0.2995556, 0, -0.2995556, 0.016322998, 0, 0, 0, 0.29999998, -0.19051683, 0.82846606, 0)
 
 [node name="Lettuce" parent="." unique_id=1919175474 instance=ExtResource("2_ygy31")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.0633972, 1.2412676, 4.130141)
+transform = Transform3D(0.24998651, 0.0025961306, 0, -0.0025961306, 0.24998651, 0, 0, 0, 0.25, 0.66911554, 0.89532816, -0.3958099)
 
-[node name="Player" parent="." unique_id=60813729 node_paths=PackedStringArray("scene", "detector", "camera") instance=ExtResource("7_xmv1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5500703, 0.9655756, 4.2789536)
+[node name="Player" parent="." unique_id=60813729 node_paths=PackedStringArray("scene", "detector", "camera", "bound") instance=ExtResource("7_xmv1v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 scene = NodePath("..")
 detector = NodePath("Area3D")
 camera = NodePath("../Camera3D")
+bound = NodePath("../Bound")
+
+[node name="Bound" type="Area3D" parent="." unique_id=2014346852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9320148, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Bound" unique_id=1201709709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050962687, 0.014297485, -0.17892385)
+shape = SubResource("BoxShape3D_koan0")
 
 [editable path="Player"]

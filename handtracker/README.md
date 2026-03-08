@@ -1,4 +1,6 @@
 # Process Result Data Format
+- hand_id (hi) | int
+    - Number of hand
 - gesture (g) | GESTURE_ENUM <-- only 2
     - NONE: 0
     - PINCH: 1
