@@ -12,6 +12,8 @@ signal on_action(ingredient: Ingredient)
 @export var min_depth := 0
 @export var max_depth := 10.0
 
+@onready var bound_size: Vector3 = ($Bound.shape as BoxShape3D).size
+
 var held_tool: Tool = null
 var held_ingredient: Ingredient = null
 var depth := 4.0
@@ -51,10 +53,8 @@ func drop_ingredient(drop_parent: Node) -> void:
 func _ready() -> void:
 	if detector == null:
 		detector = $Area3D
-	
 	detector.area_entered.connect(_on_area_entered)
 	detector.area_exited.connect(_on_area_exited)
-	
 	if camera == null:
 		camera = get_viewport().get_camera_3d()
 
@@ -82,18 +82,13 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if camera == null:
 		return
-
-	var mouse_pos: Vector2
-	if Input.is_action_pressed("depth_mod"):
-		mouse_pos = frozen_mouse_pos
-	else:
-		mouse_pos = get_viewport().get_mouse_position()
-
-	var ray_origin = camera.project_ray_origin(mouse_pos)
-	var ray_dir = camera.project_ray_normal(mouse_pos)
-
-	var target_pos = ray_origin + ray_dir * depth
-	global_position = global_position.lerp(target_pos, delta * move_speed)
+	var target_pos = $Server.hand_rel_pos * bound_size - (bound_size / 2)
+	print("REL ", $Server.hand_rel_pos)
+	print("TARGET ", target_pos)
+	print("POS ", position)
+	
+	position = position.lerp(target_pos, delta * move_speed)
+	#global_position = global_position.lerp(target_pos, delta * move_speed)
 
 # Collision detection for interacting with objects
 func _on_area_entered(area: Area3D) -> void:

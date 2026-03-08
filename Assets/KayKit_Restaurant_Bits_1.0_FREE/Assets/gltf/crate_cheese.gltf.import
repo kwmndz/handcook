@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bf1ujhq0iqedx"
-path="res://.godot/imported/crate_cheese.gltf-f29801a33a50b5378e05bb5a6f14f7c5.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/crate_cheese.gltf"
-dest_files=["res://.godot/imported/crate_cheese.gltf-f29801a33a50b5378e05bb5a6f14f7c5.scn"]
 
 [params]
 

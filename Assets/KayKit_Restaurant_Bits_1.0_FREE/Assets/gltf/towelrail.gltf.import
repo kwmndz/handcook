@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhlu5cjauge24"
-path="res://.godot/imported/towelrail.gltf-9586377115f9062c93a4432e9f951f73.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/towelrail.gltf"
-dest_files=["res://.godot/imported/towelrail.gltf-9586377115f9062c93a4432e9f951f73.scn"]
 
 [params]
 

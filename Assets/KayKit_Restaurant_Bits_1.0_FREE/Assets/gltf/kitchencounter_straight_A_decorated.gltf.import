@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhys8ahxtldri"
-path="res://.godot/imported/kitchencounter_straight_A_decorated.gltf-0695d9358d907e64c7763d8e47396d36.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/kitchencounter_straight_A_decorated.gltf"
-dest_files=["res://.godot/imported/kitchencounter_straight_A_decorated.gltf-0695d9358d907e64c7763d8e47396d36.scn"]
 
 [params]
 

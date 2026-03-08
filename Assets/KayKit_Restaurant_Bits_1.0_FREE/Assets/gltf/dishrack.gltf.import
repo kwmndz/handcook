@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bns4wea1o4nox"
-path="res://.godot/imported/dishrack.gltf-a3498257998bd14832e2913c6cdc92f7.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/dishrack.gltf"
-dest_files=["res://.godot/imported/dishrack.gltf-a3498257998bd14832e2913c6cdc92f7.scn"]
 
 [params]
 

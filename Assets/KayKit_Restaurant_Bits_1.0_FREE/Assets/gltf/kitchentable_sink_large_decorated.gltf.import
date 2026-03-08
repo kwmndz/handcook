@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6h3p8a2orf2w"
-path="res://.godot/imported/kitchentable_sink_large_decorated.gltf-ec6699b87e60e631d3a95eaa06e70a7b.scn"
+valid=false
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/kitchentable_sink_large_decorated.gltf"
-dest_files=["res://.godot/imported/kitchentable_sink_large_decorated.gltf-ec6699b87e60e631d3a95eaa06e70a7b.scn"]
 
 [params]
 
