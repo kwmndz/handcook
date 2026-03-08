@@ -2,11 +2,17 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
+import calibration as cal
+
 # load gesture tracking model
 MODEL_PATH = "gesture_recognizer.task"
 # params
 MAX_HANDS = 1
 CAMERA = 0
+
+# modify this as gestures are added
+def serialize_gesture(top_gesture, score):
+    return 0
 
 def init_recognizer():
     # configure the model
@@ -28,10 +34,6 @@ def init_recognizer():
     recognizer = GestureRecognizer.create_from_options(options)
     return recognizer
 
-
-def serialize_gesture(top_gesture, score):
-    return 0
-
 def process_result(result):
     result_proc = {}
     # TRANSLATE RESULTS
@@ -44,13 +46,15 @@ def process_result(result):
             for landmark in hand_landmarks:
                 x = float(landmark.x)
                 y = float(landmark.y)
-                hl_pos.append( (x,y,) )
+                z = float(landmark.z)
+                hl_pos.append( (x,y,z,) )
+            
             # test a few hand pos to see what is best
-            get_avg = lambda x: (sum([hl_pos[i][0] for i in x])/len(x), sum([hl_pos[i][1] for i in x])/len(x))
             result_proc["hand_landmarks"] = hl_pos
+            result_proc["hand_position"] = cal.get_avg([hl_pos[i] for i in [0, 5, 9, 13, 17]]) # purple, avg palm landmarks
+            # other methods for hand pos
+            # result_proc["hand_position"] = hl_pos[0]
             # result_proc["hand_position"] = get_avg([i for i in range])
-            result_proc["hand_position1"] = get_avg([0]) # cyan, base wrist
-            # result_proc["hand_position2"] = get_avg([0, 5, 9, 13, 17]) # purple, avg palm landmarks
 
             # GESTURES
             if result.gestures and len(result.gestures) > hand_index:
@@ -76,11 +80,13 @@ def process_result(result):
 
 # make process data smaller for easier send
 # look at the doc for format of the data
-def serialize_proc_data(proc):
+def serialize_proc_data(proc, c: cal.Calibration):
     if not proc["valid"]:
         return None
     res = {}
     res["g"] = serialize_gesture(proc["gesture"], proc["gesture_score"])
     res["ht"] = 0 if proc["hand_type"] == "Left" else 1
-    res["hp"] = proc["hand_position1"]
+
+    # updated handposition and bound checker
+    res["hp"], res["ib"] = c.normalize_and_check(*proc["hand_position"])
     return res

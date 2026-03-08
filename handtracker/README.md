@@ -8,7 +8,7 @@
     - LEFT_HAND: 0
     - RIGHT_HAND: 1
 - hand_position (hp)
-    - Vector2(float, float)
+    - Vector3(float, float, float)
         - x, y coordinates
 
 - in_bounds (ib) | IN_BOUNDS_ENUM
@@ -17,7 +17,7 @@
 
 - valid | int | dont need
     - 0 for valid packet 1 for not valid
-- hand_landmarks | Vector2[] | dont need
+- hand_landmarks | Vector3[] | dont need
     - positions for each landmark
 
 

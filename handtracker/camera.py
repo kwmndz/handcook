@@ -22,14 +22,10 @@ def write_text(frame, text, line, color = (0,0,0)):
 
 def debug_landmarks(frame, proc):
     #mark the global position of the hand
-    # g_x, g_y = proc["hand_position"]
-    # cv2.circle(frame, (int(g_x*cam.RES_WIDTH), int(g_y*cam.RES_HEIGHT)), 4, (0,0,255), -1)
-    g_x, g_y = proc["hand_position1"]
+    g_x, g_y, _ = proc["hand_position"]
     cv2.circle(frame, (int(g_x*RES_WIDTH), int(g_y*RES_HEIGHT)), 6, (255,255,0), -1)
-    # g_x, g_y = proc["hand_position2"]
-    # cv2.circle(frame, (int(g_x*cam.RES_WIDTH), int(g_y*cam.RES_HEIGHT)), 4, (128,0,128), -1)
     # mark each landmark
-    for x, y in proc["hand_landmarks"]:
+    for x, y, _ in proc["hand_landmarks"]:
         cv2.circle(frame, (int(x*RES_WIDTH),int(y*RES_HEIGHT)), 4, (0,255,0), -1)
 
 
