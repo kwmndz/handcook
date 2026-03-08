@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://53pvtaly5y1q" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_window_open.gltf" id="16_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://b23byqea7h5v6" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall.gltf" id="17_b3802"]
 [ext_resource type="PackedScene" uid="uid://b0fbbfbgyjr2t" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_half.gltf" id="18_b3802"]
+[ext_resource type="PackedScene" uid="uid://duwqwaa6gjshq" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/shelf_papertowel_decorated.gltf" id="19_fevyy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -188,3 +189,6 @@ transform = Transform3D(-7.952332e-08, 0, 1, 0, 1, 0, -1.8192816, 0, -4.371139e-
 
 [node name="wall7" parent="walls" unique_id=229249525 instance=ExtResource("17_b3802")]
 transform = Transform3D(-7.952332e-08, 0, 1, 0, 1, 0, -1.8192816, 0, -4.371139e-08, 3.1916404, 4.526897, -0.26840734)
+
+[node name="shelf_papertowel_decorated2" parent="walls" unique_id=497478450 instance=ExtResource("19_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40752625, 5.084857, -3.0545962)

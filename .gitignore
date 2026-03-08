@@ -15,7 +15,7 @@ mono_crash.*.json
 *.apk
 *.ap_
 *.bc
-*.bin
+# *.bin
 *.br
 *.brotli
 *.cas
