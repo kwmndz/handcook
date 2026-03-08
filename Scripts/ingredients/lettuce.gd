@@ -8,6 +8,7 @@ extends Ingredient
 @export var chopped_collision: CollisionShape3D
 
 func _ready() -> void:
+	super._ready()
 	isChoppable = true
 	isCookable = true
 	cook_time = 5.0

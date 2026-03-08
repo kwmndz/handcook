@@ -13,6 +13,7 @@ signal on_action(ingredient: Ingredient)
 @export var max_depth := 10.0
 
 var held_tool: Tool = null
+var held_ingredient: Ingredient = null
 var depth := 4.0
 var frozen_mouse_pos := Vector2.ZERO
 var hovered_ingredient: Ingredient = null
@@ -32,6 +33,20 @@ func drop_tool(drop_parent: Node) -> void:
 
 	held_tool.drop(drop_parent)
 	held_tool = null
+	
+func pick_up_ingredient(ingredient: Ingredient) -> void:
+	if held_ingredient != null:
+		return
+
+	held_ingredient = ingredient
+	ingredient.pick_up(self, hold_point)
+
+func drop_ingredient(drop_parent: Node) -> void:
+	if held_ingredient == null:
+		return
+
+	held_ingredient.drop(drop_parent)
+	held_ingredient = null
 
 func _ready() -> void:
 	if detector == null:
@@ -56,8 +71,13 @@ func _input(event: InputEvent) -> void:
 	if  event.is_action_pressed("grab"):
 		if (hovered_tool):
 			pick_up_tool(hovered_tool)
+		if (hovered_ingredient):
+			pick_up_ingredient(hovered_ingredient)
 	if event.is_action_released("grab"):
-		drop_tool(scene)
+		if held_tool != null:
+			drop_tool(scene)
+		if held_ingredient != null:
+			drop_ingredient(scene)
 
 func _process(delta: float) -> void:
 	if camera == null:

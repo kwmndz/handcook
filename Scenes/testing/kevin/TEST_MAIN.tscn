@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bkenfv2m65dww" path="res://Assets/scene_objects/stove.tscn" id="5_osixi"]
 [ext_resource type="PackedScene" uid="uid://cjep7ovjdj0ny" path="res://Assets/scene_objects/cutting_board.tscn" id="6_mwgec"]
 [ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="7_mwgec"]
+[ext_resource type="PackedScene" uid="uid://dqlkgapj5m1qw" path="res://Assets/scene_objects/garbage.tscn" id="8_85muu"]
+[ext_resource type="PackedScene" uid="uid://bw20wojdv8fk6" path="res://Assets/UI/menu.tscn" id="9_menu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -43,7 +45,7 @@ size = Vector3(9.565811, 0.16699219, 8.889908)
 shape = SubResource("BoxShape3D_ygy31")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
-transform = Transform3D(1, 0, 0, 0, 0.9490412, 0.3151522, 0, -0.3151522, 0.9490412, -3.0664206, 1.1204576, 5.138948)
+transform = Transform3D(1, 0, 0, 0, 0.9490412, 0.3151522, 0, -0.3151522, 0.9490412, -3.0664206, 1.3733624, 5.3857703)
 
 [node name="MouseHand" parent="." unique_id=60813729 node_paths=PackedStringArray("scene", "camera") instance=ExtResource("4_ygy31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15108824, 1.611028, 3.81941)
@@ -63,4 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893
 transform = Transform3D(0.016322998, 0.2995556, 0, -0.2995556, 0.016322998, 0, 0, 0, 0.29999998, -2.5290115, 0.7389641, 4.412452)
 
 [node name="Lettuce" parent="." unique_id=1919175474 instance=ExtResource("2_ygy31")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.0633972, 1.2412676, 4.130141)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.539754, 1.2412676, 4.3227673)
+
+[node name="Garbage" parent="." unique_id=1146456821 instance=ExtResource("8_85muu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.018874, -0.17903209, 4.5494957)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1847392015]
+
+[node name="menu" parent="CanvasLayer" unique_id=1726193840 instance=ExtResource("9_menu")]

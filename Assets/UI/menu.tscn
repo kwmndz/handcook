@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://bw20wojdv8fk6"]
+
+[ext_resource type="Script" uid="uid://ddao6nv6rn3fa" path="res://Scripts/UI/menu.gd" id="1_menu"]
+[ext_resource type="Script" uid="uid://n5s8skycgcsb" path="res://Scripts/UI/spawn_button.gd" id="2_spawnbtn"]
+[ext_resource type="PackedScene" uid="uid://chhucosvw5swq" path="res://Assets/ingredients/lettuce.tscn" id="3_lettuce"]
+[ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="4_knife"]
+
+[node name="menu" type="Control" unique_id=1131703700]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=519556663]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=235965884]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Control" unique_id=1808395436]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -227.0
+offset_right = 549.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 20
+columns = 8
+
+[node name="Button" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=293664225]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+text = "Lettuce"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("3_lettuce")
+spawn_position = Vector3(-3.0633972, 1.2412676, 4.130141)
+spawn_scale = Vector3(0.25, 0.25, 0.25)
+
+[node name="Button2" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1747243351]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+text = "Knife"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("4_knife")
+spawn_position = Vector3(-2.5290115, 0.7389641, 4.412452)
+spawn_scale = Vector3(0.3, 0.3, 0.3)
+
+[node name="Button3" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=597952140]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=78328990]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=535254621]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=541168099]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=884581766]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=218697815]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1238180224]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=449354341]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=864803600]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1205815552]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button13" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=2028132370]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button14" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=2007995533]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button15" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1276814655]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button16" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1726043736]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button17" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1470833851]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button18" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1423387040]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button19" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1592035798]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button20" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=556821553]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button21" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=2116941826]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button22" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=916333707]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button23" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=874604613]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="Button24" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=8766582]
+custom_minimum_size = Vector2(125, 100)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1300456629]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1231434061]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Back"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1966106652]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Reset"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1518152076]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "Quit"
