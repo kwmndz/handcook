@@ -8,9 +8,9 @@ albedo_color = Color(1, 0, 0.1882353, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_r4gnf"]
 size = Vector3(0.018554688, 0.01171875, 0.10131836)
 
-[node name="MouseHand" type="Node3D" unique_id=60813729 node_paths=PackedStringArray("camera")]
+[node name="MouseHand" type="Node3D" unique_id=60813729 node_paths=PackedStringArray("hold_point")]
 script = ExtResource("1_r4gnf")
-camera = NodePath("")
+hold_point = NodePath("HoldPoint")
 
 [node name="hand_mesh" type="CSGBox3D" parent="." unique_id=787178696]
 size = Vector3(0.017822266, 0.01171875, 0.103271484)
@@ -20,3 +20,5 @@ material = SubResource("StandardMaterial3D_r4gnf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=345407295]
 shape = SubResource("BoxShape3D_r4gnf")
+
+[node name="HoldPoint" type="Node3D" parent="." unique_id=155067972]

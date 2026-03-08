@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cagsvaw62yjwg"]
 
+[ext_resource type="Script" uid="uid://bhbrcbtfuk1nt" path="res://Scripts/toolsScripts/knife.gd" id="1_2suyu"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5vfp"]
 albedo_color = Color(0.657244, 0.3080181, 0.08717755, 1)
 
@@ -22,6 +24,7 @@ height = 0.8935547
 size = Vector3(0.029296875, 1.2810059, 0.28710938)
 
 [node name="RigidBody3D" type="RigidBody3D" unique_id=359082776]
+script = ExtResource("1_2suyu")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="." unique_id=1015849094]
 transform = Transform3D(0.070396304, 0, 0, 0, 0.45518813, 0, 0, 0, 0.20132971, 0, 0, 0)
