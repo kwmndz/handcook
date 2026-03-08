@@ -2,8 +2,11 @@
 
 [ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/kevin_test/test_main.gd" id="1_frq2i"]
 [ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/lettuce.tscn" id="2_ygy31"]
-[ext_resource type="PackedScene" path="res://Assets/scenes/workstation.tscn" id="4_t7cfm"]
+[ext_resource type="PackedScene" uid="uid://d0krehxoabvu8" path="res://Assets/scene_objects/workstation.tscn" id="4_cd61o"]
 [ext_resource type="PackedScene" uid="uid://dkn8jdi6a0u30" path="res://Assets/Mouse_Hand.tscn" id="4_ygy31"]
+[ext_resource type="PackedScene" uid="uid://bkenfv2m65dww" path="res://Assets/scene_objects/stove.tscn" id="5_osixi"]
+[ext_resource type="PackedScene" uid="uid://cjep7ovjdj0ny" path="res://Assets/scene_objects/cutting_board.tscn" id="6_mwgec"]
+[ext_resource type="PackedScene" uid="uid://cagsvaw62yjwg" path="res://Assets/tools/knife.tscn" id="7_mwgec"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,5 +53,14 @@ transform = Transform3D(1, 0, 0, 0, 0.9490411, 0.31515217, 0, -0.31515217, 0.949
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15108824, 1.611028, 3.81941)
 camera = NodePath("../Camera3D")
 
-[node name="Workstation" parent="." unique_id=73379149 instance=ExtResource("4_t7cfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.559914, 0.37752318, 3.888559)
+[node name="Workstation" parent="." unique_id=73379149 instance=ExtResource("4_cd61o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6288733, 0, 4.2805266)
+
+[node name="stove" parent="Workstation" unique_id=1575896227 instance=ExtResource("5_osixi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.020914078)
+
+[node name="cuttingBoard" parent="Workstation" unique_id=1888764547 instance=ExtResource("6_mwgec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893573)
+
+[node name="RigidBody3D" parent="." unique_id=359082776 instance=ExtResource("7_mwgec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5164676, 0.9551884, 4.179848)

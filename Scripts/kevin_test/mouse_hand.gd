@@ -3,17 +3,35 @@ extends Node3D
 signal on_hover(ingredient: Ingredient)
 signal on_action(ingredient: Ingredient)
 
+@export var scene: Node3D
 @export var detector: Area3D
 @export var camera: Camera3D
+@export var hold_point: Node3D
 @export var depth_sensitivity := 0.03
 @export var move_speed := 12.0
 @export var min_depth := 0
 @export var max_depth := 10.0
 
+var held_tool: Tool = null
 var depth := 4.0
 var frozen_mouse_pos := Vector2.ZERO
 var hovered_ingredient: Ingredient = null
+var hovered_tool: Tool = null
 
+# Tool interaction helper functions
+func pick_up_tool(tool: Tool) -> void:
+	if held_tool != null:
+		return
+
+	held_tool = tool
+	tool.pick_up(self, hold_point)
+
+func drop_tool(drop_parent: Node) -> void:
+	if held_tool == null:
+		return
+
+	held_tool.drop(drop_parent)
+	held_tool = null
 
 func _ready() -> void:
 	if detector == null:
@@ -35,6 +53,11 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("pinch"):
 		on_action.emit(hovered_ingredient)
+	if  event.is_action_pressed("grab"):
+		if (hovered_tool):
+			pick_up_tool(hovered_tool)
+	if event.is_action_released("grab"):
+		drop_tool(scene)
 
 func _process(delta: float) -> void:
 	if camera == null:
@@ -52,25 +75,24 @@ func _process(delta: float) -> void:
 	var target_pos = ray_origin + ray_dir * depth
 	global_position = global_position.lerp(target_pos, delta * move_speed)
 
-func _on_body_entered(body: Node) -> void:
-	if body is Ingredient:
-		hovered_ingredient = body
-		on_hover.emit(hovered_ingredient)
-
-func _on_body_exited(body: Node) -> void:
-	if body == hovered_ingredient:
-		hovered_ingredient = null
-		on_hover.emit(null)
-
+# Collision detection for interacting with objects
 func _on_area_entered(area: Area3D) -> void:
-	print(area)
 	var parent = area.get_parent()
 	if parent is Ingredient:
 		hovered_ingredient = parent
 		on_hover.emit(hovered_ingredient)
+	if parent is Tool:
+		hovered_tool = parent
 
 func _on_area_exited(area: Area3D) -> void:
 	var parent = area.get_parent()
 	if parent == hovered_ingredient:
 		hovered_ingredient = null
 		on_hover.emit(null)
+	if parent == hovered_tool:
+		hovered_tool = null
+
+# maybe use this function (prob not)
+func use_tool(target = null) -> void:
+	if held_tool != null:
+		held_tool.use(target)

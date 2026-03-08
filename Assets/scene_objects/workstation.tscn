@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://d0krehxoabvu8"]
 
-[ext_resource type="PackedScene" uid="uid://dl4ve5fyqr1hc" path="res://Assets/cutting_board.tscn" id="1_sncti"]
-[ext_resource type="PackedScene" path="res://Assets/stove.tscn" id="2_jgxeg"]
-
 [node name="Workstation" type="CSGCombiner3D" unique_id=73379149]
 use_collision = true
 
@@ -11,16 +8,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033642054, 0, -0.04921794)
 use_collision = true
 size = Vector3(2, 1, 1.5)
 
-[node name="cuttingBoard" parent="." unique_id=1888764547 instance=ExtResource("1_sncti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51556665, 0.51241946, 0.24427858)
-
 [node name="wall" type="CSGBox3D" parent="." unique_id=1978015986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00061035156, 1.0005051, -0.76416737)
 use_collision = true
 size = Vector3(1.9768066, 1, 0.06665039)
-
-[node name="stove" parent="." unique_id=1575896227 instance=ExtResource("2_jgxeg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41786867, 0.52479446, 0)
 
 [node name="removeUnder1" type="CSGCylinder3D" parent="." unique_id=386597838]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.30939198, -0.20180309, -0.059441328)
