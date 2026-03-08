@@ -23,7 +23,7 @@ height = 0.8935547
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5vfp"]
 size = Vector3(0.029296875, 1.2810059, 0.28710938)
 
-[node name="RigidBody3D" type="RigidBody3D" unique_id=359082776]
+[node name="Knife" type="RigidBody3D" unique_id=359082776]
 script = ExtResource("1_2suyu")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="." unique_id=1015849094]
