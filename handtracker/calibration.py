@@ -17,13 +17,15 @@ class HandSmoother:
     
 
 class Calibration():
-    calibrated = False
-    min_x = 0
-    min_y = 0
-    min_z = 0
-    max_x = 0
-    max_y = 0
-    max_z = 0
+    def __init__(self):
+        calibrated = False
+        min_x = None
+        min_y = None
+        min_z = None
+        max_x = None
+        max_y = None
+        max_z = None
+
     def update_min(self, x, y, z):
         self.min_x = x
         self.min_y = y

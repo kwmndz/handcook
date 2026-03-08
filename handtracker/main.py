@@ -7,6 +7,7 @@ import calibration as cal
 import tracker as track
 import camera as cam
 import conn
+import smoother as sm
 
 DEBUG_INTERVAL = 100 # 10 FPS <-- not implemented
 
@@ -17,8 +18,10 @@ class State(Enum):
     CALIBRATED = 2
     # add hand size cal
 
-cur_cal = cal.Calibration()
 cur_state = State.FIND_BOTTOM_LEFT
+cur_cal = cal.Calibration()
+smoother = sm.HandSmoother() # base values
+# TODO: add debouncer for in_bounds
 
 # init model, camera, and socket
 recognizer = track.init_recognizer()
@@ -47,7 +50,7 @@ while True:
         cam.debug_landmarks(frame, result_proc)
 
         if cur_state == State.FIND_BOTTOM_LEFT:
-            cam.write_text(frame, "Place bottom right", 0, color=(0,0,255))
+            cam.write_text(frame, "Place bottom left", 0, color=(0,0,255))
         
         elif cur_state == State.FIND_TOP_RIGHT:
             cam.write_text(frame, "Place top right", 0, color=(255,0,0))
@@ -57,7 +60,7 @@ while True:
             # print("Calibration:", cur_cal.__dict__)
             
             # send to Godot
-            data = track.serialize_proc_data(result_proc, cur_cal)
+            data = track.serialize_proc_data(result_proc, cur_cal, smoother)
             conn.send_data(sock, data)
             # output current gesture + hand type
             cam.write_text(frame, result_proc["gesture"], 0)
@@ -65,7 +68,6 @@ while True:
             cam.write_text(frame, f"Coords: {result_proc['hand_position']}", 2)
             cam.write_text(frame, f"In bounds: {bool(data["ib"])}", 3)
             cam.write_text(frame, f"Normal: {data['hp']}", 4)
-
 
     # UPDATE CV2 + INPUT HANDLING
     cv2.imshow("Hand Tracker", frame)
@@ -76,7 +78,10 @@ while True:
 
     elif key == ord('r'):
         cur_state = State.FIND_BOTTOM_LEFT
+        # reset these as well
         cur_cal = cal.Calibration() # also sets calibrated to false
+        smoother = sm.HandSmoother() # base values
+
 
     elif key == ord(' '):
         if cur_state == State.FIND_BOTTOM_LEFT:

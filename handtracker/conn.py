@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # PROCESS RESULT OUTPUT
     fake_data = {
         "gesture": 0,
-        "hand_type"
+        "hand_type": 1,
         "hand_position": (0, 0), # (x,y)
     }
     sock = init_connection()

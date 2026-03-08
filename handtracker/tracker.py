@@ -3,6 +3,7 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
 import calibration as cal
+import smoother as sm
 
 # load gesture tracking model
 MODEL_PATH = "gesture_recognizer.task"
@@ -80,7 +81,7 @@ def process_result(result):
 
 # make process data smaller for easier send
 # look at the doc for format of the data
-def serialize_proc_data(proc, c: cal.Calibration):
+def serialize_proc_data(proc, c: cal.Calibration, s: sm.HandSmoother):
     if not proc["valid"]:
         return None
     res = {}
@@ -89,4 +90,7 @@ def serialize_proc_data(proc, c: cal.Calibration):
 
     # updated handposition and bound checker
     res["hp"], res["ib"] = c.normalize_and_check(*proc["hand_position"])
+
+    # no smoother for now
+    # res["hp"] = s.update(*res["hp"])
     return res
