@@ -49,8 +49,9 @@ isChoppable = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
 transform = Transform3D(1, 0, 0, 0, 0.9490411, 0.31515217, 0, -0.31515217, 0.9490411, -3.0664206, 1.8700904, 6.0805354)
 
-[node name="MouseHand" parent="." unique_id=60813729 node_paths=PackedStringArray("camera") instance=ExtResource("4_ygy31")]
+[node name="MouseHand" parent="." unique_id=60813729 node_paths=PackedStringArray("scene", "camera") instance=ExtResource("4_ygy31")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15108824, 1.611028, 3.81941)
+scene = NodePath("..")
 camera = NodePath("../Camera3D")
 
 [node name="Workstation" parent="." unique_id=73379149 instance=ExtResource("4_cd61o")]
@@ -62,5 +63,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.02
 [node name="cuttingBoard" parent="Workstation" unique_id=1888764547 instance=ExtResource("6_mwgec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893573)
 
-[node name="RigidBody3D" parent="." unique_id=359082776 instance=ExtResource("7_mwgec")]
+[node name="Knife" parent="." unique_id=359082776 instance=ExtResource("7_mwgec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5164676, 0.9551884, 4.179848)
