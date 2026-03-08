@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ya70eh4pntrl"
+path="res://.godot/imported/food_ingredient_bun.obj-fe9fdc5a718384badc6bc7af5590ae9e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/food_ingredient_bun.obj-fe9fdc5a718384badc6bc7af5590ae9e.mesh"]
+
+source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_ingredient_bun.obj"
+dest_files=["res://.godot/imported/food_ingredient_bun.obj-fe9fdc5a718384badc6bc7af5590ae9e.mesh", "res://.godot/imported/food_ingredient_bun.obj-fe9fdc5a718384badc6bc7af5590ae9e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

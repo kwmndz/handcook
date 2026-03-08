@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bkenfv2m65dww"]
 
+[ext_resource type="Script" path="res://Scripts/toolsScripts/stove.gd" id="1_stove"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_owahk"]
 albedo_color = Color(0, 0, 0, 1)
 
@@ -7,6 +9,7 @@ albedo_color = Color(0, 0, 0, 1)
 size = Vector3(0.86035156, 0.048583984, 0.8095703)
 
 [node name="stove" type="CSGBox3D" unique_id=1575896227]
+script = ExtResource("1_stove")
 size = Vector3(0.84936523, 0.046, 0.80859375)
 material = SubResource("StandardMaterial3D_owahk")
 

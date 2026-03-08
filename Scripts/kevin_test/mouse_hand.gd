@@ -77,19 +77,21 @@ func _process(delta: float) -> void:
 
 # Collision detection for interacting with objects
 func _on_area_entered(area: Area3D) -> void:
-	var parent = area.get_parent()
-	if parent is Ingredient:
-		hovered_ingredient = parent
+	var ingredient = Ingredient.find_from_node(area)
+	if ingredient:
+		hovered_ingredient = ingredient
 		on_hover.emit(hovered_ingredient)
-	if parent is Tool:
-		hovered_tool = parent
+	var tool = Tool.find_from_node(area)
+	if tool:
+		hovered_tool = tool
 
 func _on_area_exited(area: Area3D) -> void:
-	var parent = area.get_parent()
-	if parent == hovered_ingredient:
+	var ingredient = Ingredient.find_from_node(area)
+	if ingredient == hovered_ingredient:
 		hovered_ingredient = null
 		on_hover.emit(null)
-	if parent == hovered_tool:
+	var tool = Tool.find_from_node(area)
+	if tool == hovered_tool:
 		hovered_tool = null
 
 # maybe use this function (prob not)
