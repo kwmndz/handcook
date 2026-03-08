@@ -70,7 +70,7 @@ def process_result(result):
         result_proc["valid"] = False
 
     # DEBUG show current processed frame
-    print("DEBUG:\n", result_proc, end="\n\n", sep="")
+    # print("DEBUG:\n", result_proc, end="\n\n", sep="")
     return result_proc
 
 
