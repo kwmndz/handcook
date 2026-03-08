@@ -4,7 +4,7 @@ extends Tool
 func _ready() -> void:
 	super._ready()
 	hold_offset_rotation = Vector3(90, -90, 90)
-	hold_offset_position = Vector3(0.2, 0, 0)
+	hold_offset_position = Vector3(0, 0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cuk8bwjhopahs"
-valid=false
+path="res://.godot/imported/food_ingredient_bun_top.gltf-bb98a8550174854df58e44ec57b4a964.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_bun_top.gltf"
+dest_files=["res://.godot/imported/food_ingredient_bun_top.gltf-bb98a8550174854df58e44ec57b4a964.scn"]
 
 [params]
 

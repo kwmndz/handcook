@@ -1,8 +1,10 @@
+class_name Lettuce
 extends Ingredient
 
 @export var default_visual: MeshInstance3D
 @export var chopped_visual: MeshInstance3D
 @export var overcooked_visual: MeshInstance3D
+@export var overcooked_chopped_visual: MeshInstance3D
 
 @export var default_collision: CollisionShape3D
 @export var chopped_collision: CollisionShape3D
@@ -25,7 +27,11 @@ func _ready() -> void:
 func update_visual() -> void:
 	default_visual.visible = currentState == State.raw
 	chopped_visual.visible = currentState == State.chopped
-	overcooked_visual.visible = currentState == State.overcooked
+	
+	if default_collision.disabled == true:
+		overcooked_chopped_visual.visible = currentState == State.overcooked
+	else:
+		overcooked_visual.visible = currentState == State.overcooked
 	
 	if currentState == State.chopped:
 		default_collision.disabled = currentState != State.raw
@@ -34,13 +40,18 @@ func update_visual() -> void:
 func chop() -> void:
 	if currentState != State.raw:
 		return
-	currentState = State.chopped
-	update_visual()
+	# for the animation
+	_play_smoke_and_change(func():
+		currentState = State.chopped
+		update_visual()
+	)
 
 func cook() -> void:
 	# Lettuce skips cooked and goes straight to overcooked.
-	super.overcook()
-	update_visual()
+	_play_smoke_and_change(func():
+		super.overcook()
+		update_visual()
+	)
 
 func overcook() -> void:
 	pass  # cook() already does ts

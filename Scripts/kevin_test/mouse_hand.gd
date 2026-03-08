@@ -36,7 +36,7 @@ func place_in_box(normalized: Vector3) -> Vector3:
 
 # Tool interaction helper functions
 func pick_up_tool(tool: Tool) -> void:
-	if held_tool != null:
+	if held_ingredient != null or held_tool != null:
 		return
 
 	held_tool = tool
@@ -50,7 +50,7 @@ func drop_tool(drop_parent: Node) -> void:
 	held_tool = null
 	
 func pick_up_ingredient(ingredient: Ingredient) -> void:
-	if held_ingredient != null:
+	if held_ingredient != null or held_tool != null:
 		return
 
 	held_ingredient = ingredient

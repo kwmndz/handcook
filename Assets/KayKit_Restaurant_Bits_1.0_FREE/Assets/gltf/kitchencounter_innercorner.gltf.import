@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://curvc46384bgw"
-valid=false
+path="res://.godot/imported/kitchencounter_innercorner.gltf-7912e90133d8ed03c46104183943e7a7.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/kitchencounter_innercorner.gltf"
+dest_files=["res://.godot/imported/kitchencounter_innercorner.gltf-7912e90133d8ed03c46104183943e7a7.scn"]
 
 [params]
 

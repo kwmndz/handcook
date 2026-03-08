@@ -9,3 +9,5 @@ rigid_body = NodePath("Knife")
 hit_area = NodePath("Knife/Area3D")
 
 [node name="Knife" parent="." unique_id=359082776 instance=ExtResource("1_2suyu")]
+
+[editable path="Knife"]

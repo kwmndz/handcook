@@ -69,6 +69,7 @@ func pick_up(new_holder: Node3D, hold_point: Node3D) -> void:
 	if rigid_body:
 		rigid_body.linear_velocity = Vector3.ZERO
 		rigid_body.angular_velocity = Vector3.ZERO
+		rigid_body.transform = Transform3D.IDENTITY
 
 	# reparent to the hold_point
 	# use keep_global_transform=false so we can set
@@ -81,6 +82,7 @@ func pick_up(new_holder: Node3D, hold_point: Node3D) -> void:
 		deg_to_rad(hold_offset_rotation.y),
 		deg_to_rad(hold_offset_rotation.z)
 	)
+	#transform = Transform3D.IDENTITY
 	transform = Transform3D(Basis.from_euler(rot_rad), hold_offset_position)
 	scale = bscale
 

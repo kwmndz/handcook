@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsoy845ah0fi6"
-valid=false
+path="res://.godot/imported/ketchup.gltf-e624d8d071fb23ca6ed6e17741e97357.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/ketchup.gltf"
+dest_files=["res://.godot/imported/ketchup.gltf-e624d8d071fb23ca6ed6e17741e97357.scn"]
 
 [params]
 

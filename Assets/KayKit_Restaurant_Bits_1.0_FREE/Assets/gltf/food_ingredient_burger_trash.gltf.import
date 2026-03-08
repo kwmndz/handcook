@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3ccit32ycckp"
-valid=false
+path="res://.godot/imported/food_ingredient_burger_trash.gltf-28ae0be0aa232035787907f8b9ec8634.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_burger_trash.gltf"
+dest_files=["res://.godot/imported/food_ingredient_burger_trash.gltf-28ae0be0aa232035787907f8b9ec8634.scn"]
 
 [params]
 

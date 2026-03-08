@@ -8,7 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cjep7ovjdj0ny" path="res://Assets/scene_objects/cutting_board.tscn" id="6_mwgec"]
 [ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="7_mwgec"]
 [ext_resource type="PackedScene" uid="uid://dqlkgapj5m1qw" path="res://Assets/scene_objects/garbage.tscn" id="8_85muu"]
-[ext_resource type="PackedScene" uid="uid://bw20wojdv8fk6" path="res://Assets/UI/menu.tscn" id="9_menu"]
+[ext_resource type="PackedScene" uid="uid://cw75w3rp10dc7" path="res://Assets/UI/canvas_layer.tscn" id="9_m4ym5"]
+[ext_resource type="PackedScene" uid="uid://cp48hdtn2dk5s" path="res://Assets/ingredients/bun.tscn" id="10_1x0v0"]
+[ext_resource type="PackedScene" uid="uid://4apsb83g6lwe" path="res://Assets/ingredients/bunTop.tscn" id="11_71eth"]
+[ext_resource type="PackedScene" uid="uid://t62q0fpek22x" path="res://Assets/ingredients/patty.tscn" id="12_8t3n0"]
+[ext_resource type="PackedScene" uid="uid://driaangm1h828" path="res://Assets/ingredients/onion.tscn" id="13_xk6r2"]
+[ext_resource type="PackedScene" uid="uid://orhgck21hxu7" path="res://Assets/ingredients/cheese.tscn" id="14_m4ym5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,11 +70,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893
 transform = Transform3D(0.016322998, 0.2995556, 0, -0.2995556, 0.016322998, 0, 0, 0, 0.29999998, -2.5290115, 0.7389641, 4.412452)
 
 [node name="Lettuce" parent="." unique_id=1919175474 instance=ExtResource("2_ygy31")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.539754, 1.2412676, 4.3227673)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.539754, 1.3574469, 4.3227673)
 
 [node name="Garbage" parent="." unique_id=1146456821 instance=ExtResource("8_85muu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.018874, -0.17903209, 4.5494957)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1847392015]
+[node name="CanvasLayer" parent="." unique_id=1847888443 instance=ExtResource("9_m4ym5")]
 
-[node name="menu" parent="CanvasLayer" unique_id=1726193840 instance=ExtResource("9_menu")]
+[node name="Bun" parent="." unique_id=1033514654 instance=ExtResource("10_1x0v0")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.0314417, 0.69015515, 4.438108)
+
+[node name="bunTop" parent="." unique_id=1754159581 instance=ExtResource("11_71eth")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.3406153, 0.95923, 4.5397477)
+
+[node name="patty" parent="." unique_id=1961161194 instance=ExtResource("12_8t3n0")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.1916764, 0.7536952, 4.4484925)
+
+[node name="onion" parent="." unique_id=1840735367 instance=ExtResource("13_xk6r2")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.019337, 0.8483873, 3.9602275)
+
+[node name="cheese" parent="." unique_id=1780306468 instance=ExtResource("14_m4ym5")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.874655, 0.7995356, 4.367463)

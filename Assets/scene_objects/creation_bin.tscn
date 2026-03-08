@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bh50ysidn5uyx"]
+
+[ext_resource type="ArrayMesh" uid="uid://ffohvsfc16xf" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/crate.obj" id="1_77emp"]
+[ext_resource type="Script" path="res://Scripts/toolsScripts/creation_bin.gd" id="2_creationbin"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_77emp"]
+size = Vector3(1.4985962, 0.09552002, 1.5135498)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8yhi"]
+size = Vector3(0.1616211, 0.6870117, 1.8763428)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqsqf"]
+size = Vector3(1.4526367, 0.6738281, 0.26379395)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6hnmh"]
+size = Vector3(1.4433594, 0.6981201, 1.3891602)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_confetti"]
+lifetime_randomness = 0.5
+direction = Vector3(0, 1, 0)
+spread = 80.0
+initial_velocity_min = 3.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, -6.0, 0)
+scale_min = 0.05
+scale_max = 0.15
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_confetti"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0.3, 0.3, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_confetti"]
+material = SubResource("StandardMaterial3D_confetti")
+size = Vector2(0.12, 0.08)
+
+[node name="creationBin" type="Node3D" unique_id=38894562 node_paths=PackedStringArray("area_3d", "confetti")]
+script = ExtResource("2_creationbin")
+area_3d = NodePath("StaticBody3D/Area3D")
+confetti = NodePath("ConfettiParticles")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1233612440]
+
+[node name="Crate" type="MeshInstance3D" parent="StaticBody3D" unique_id=664513532]
+mesh = ExtResource("1_77emp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1114390716]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018005371, 0.051727295, -0.0025024414)
+shape = SubResource("BoxShape3D_77emp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=934517080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8429348, 0.47004366, -0.019530118)
+shape = SubResource("BoxShape3D_y8yhi")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=1529602054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8426797, 0.47004366, -0.019530118)
+shape = SubResource("BoxShape3D_y8yhi")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1854568165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010498047, 0.45484656, -0.86791956)
+shape = SubResource("BoxShape3D_hqsqf")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=769531220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010498047, 0.45484656, 0.8822634)
+shape = SubResource("BoxShape3D_hqsqf")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D" unique_id=2121624542]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D" unique_id=1975092822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01171875, 0.45362473, 0.016845703)
+shape = SubResource("BoxShape3D_6hnmh")
+
+[node name="ConfettiParticles" type="GPUParticles3D" parent="." unique_id=498273615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01171875, 0.85, 0.016845703)
+emitting = false
+amount = 50
+lifetime = 2.5
+one_shot = true
+explosiveness = 0.85
+local_coords = false
+process_material = SubResource("ParticleProcessMaterial_confetti")
+draw_pass_1 = SubResource("QuadMesh_confetti")

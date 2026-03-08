@@ -7,6 +7,7 @@ enum State {raw, chopped, cooked, overcooked}
 @export var rigid_body: RigidBody3D
 @export var hold_offset_position: Vector3 = Vector3.ZERO
 @export var hold_offset_rotation: Vector3 = Vector3.ZERO
+@export var smoke_particles: GPUParticles3D
 
 @export var isChoppable: bool = false
 @export var isCookable: bool = false
@@ -20,6 +21,7 @@ enum State {raw, chopped, cooked, overcooked}
 
 var holder: Node3D = null
 var is_held: bool = false
+var _is_changing: bool = false
 
 # goes up the scene tree from the given node to find an Ingredient
 # gets used when the collision callbacks give the collision body
@@ -39,6 +41,23 @@ func _ready() -> void:
 				rigid_body = child
 				break
 
+# Plays the smoke burst then calls callback to
+# do the actual state swap
+func _play_smoke_and_change(callback: Callable) -> void:
+	# make sure its not called while alr playing
+	if _is_changing:
+		return
+	_is_changing = true
+
+	if smoke_particles:
+		smoke_particles.restart()
+		smoke_particles.emitting = true
+		# wait until abt end animation
+		await get_tree().create_timer(smoke_particles.lifetime * 0.4).timeout
+
+	callback.call()
+	_is_changing = false
+
 func disable_physics() -> void:
 	if rigid_body:
 		rigid_body.freeze = true
@@ -57,6 +76,7 @@ func pick_up(new_holder: Node3D, hold_point: Node3D) -> void:
 	if rigid_body:
 		rigid_body.linear_velocity = Vector3.ZERO
 		rigid_body.angular_velocity = Vector3.ZERO
+		rigid_body.transform = Transform3D.IDENTITY
 
 	if get_parent():
 		reparent(hold_point, false)

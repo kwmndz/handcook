@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://orhgck21hxu7"]
+
+[ext_resource type="ArrayMesh" uid="uid://dbyqq0o1kxi52" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_ingredient_cheese.obj" id="1_bv4hh"]
+[ext_resource type="ArrayMesh" uid="uid://dkc0ai5gjumcm" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_ingredient_cheese_slice.obj" id="2_ihmre"]
+[ext_resource type="Script" uid="uid://kf6rbikeodop" path="res://Scripts/ingredients/cheese.gd" id="3_cheese"]
+[ext_resource type="PackedScene" uid="uid://b37bk2kfk8olo" path="res://Assets/ingredients/particles/smoke_particles.tscn" id="4_gunj3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bv4hh"]
+radius = 0.30664063
+height = 1.0556641
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bv4hh"]
+size = Vector3(0.73101807, 0.105529785, 0.6916504)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bv4hh"]
+radius = 0.5822583
+
+[node name="cheese" type="Node3D" unique_id=1780306468 node_paths=PackedStringArray("raw_visual", "chopped_visual", "raw_collision", "chopped_collision", "smoke_particles")]
+script = ExtResource("3_cheese")
+raw_visual = NodePath("RigidBody3D/raw_cheese")
+chopped_visual = NodePath("RigidBody3D/chopped_cheese")
+raw_collision = NodePath("RigidBody3D/collisionshape-raw")
+chopped_collision = NodePath("RigidBody3D/collisionshape-chopped")
+smoke_particles = NodePath("RigidBody3D/SmokeParticles")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=2046002915]
+
+[node name="raw_cheese" type="MeshInstance3D" parent="RigidBody3D" unique_id=234927900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25138453, 0)
+mesh = ExtResource("1_bv4hh")
+
+[node name="chopped_cheese" type="MeshInstance3D" parent="RigidBody3D" unique_id=430040317]
+visible = false
+mesh = ExtResource("2_ihmre")
+
+[node name="collisionshape-raw" type="CollisionShape3D" parent="RigidBody3D" unique_id=470212917]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.119628906, -5.2291456e-09, 0)
+shape = SubResource("CapsuleShape3D_bv4hh")
+
+[node name="collisionshape-chopped" type="CollisionShape3D" parent="RigidBody3D" unique_id=1104407162]
+transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, -0.018136807, -0.024383545, -0.015071265)
+shape = SubResource("BoxShape3D_bv4hh")
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=1427612069]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=1421480990]
+shape = SubResource("SphereShape3D_bv4hh")
+
+[node name="SmokeParticles" parent="RigidBody3D" unique_id=1240692456 instance=ExtResource("4_gunj3")]

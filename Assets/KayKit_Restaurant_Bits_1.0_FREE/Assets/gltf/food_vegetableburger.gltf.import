@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://nie5cw27hdwd"
-valid=false
+path="res://.godot/imported/food_vegetableburger.gltf-f818f1d1361b32fd28908d89347c42ef.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_vegetableburger.gltf"
+dest_files=["res://.godot/imported/food_vegetableburger.gltf-f818f1d1361b32fd28908d89347c42ef.scn"]
 
 [params]
 

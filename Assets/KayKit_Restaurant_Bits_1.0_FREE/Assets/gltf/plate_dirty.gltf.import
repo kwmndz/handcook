@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bpsbf7v7j54sv"
-valid=false
+path="res://.godot/imported/plate_dirty.gltf-be40360fa5127990839a23bc6d5b5790.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/plate_dirty.gltf"
+dest_files=["res://.godot/imported/plate_dirty.gltf-be40360fa5127990839a23bc6d5b5790.scn"]
 
 [params]
 

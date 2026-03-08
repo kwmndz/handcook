@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byu7gauxb1wnv"
-valid=false
+path="res://.godot/imported/table_round_A_small.gltf-40a22b0ffca6afcf0b53042f5d02a507.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/table_round_A_small.gltf"
+dest_files=["res://.godot/imported/table_round_A_small.gltf-40a22b0ffca6afcf0b53042f5d02a507.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dcf4povxeogta"
-valid=false
+path="res://.godot/imported/food_ingredient_burger_cooked.gltf-e72981b553145da6d28f71e70eb20d40.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_burger_cooked.gltf"
+dest_files=["res://.godot/imported/food_ingredient_burger_cooked.gltf-e72981b553145da6d28f71e70eb20d40.scn"]
 
 [params]
 

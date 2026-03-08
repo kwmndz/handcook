@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c38pv5x8yhovs"
-valid=false
+path="res://.godot/imported/food_ingredient_onion_chopped.gltf-b30e324f752fd71e2c8cc5ab0763c796.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_onion_chopped.gltf"
+dest_files=["res://.godot/imported/food_ingredient_onion_chopped.gltf-b30e324f752fd71e2c8cc5ab0763c796.scn"]
 
 [params]
 
