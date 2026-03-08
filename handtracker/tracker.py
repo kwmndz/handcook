@@ -88,15 +88,14 @@ def process_result(result):
 
 # make process data smaller for easier send
 # look at the doc for format of the data
-def serialize_proc_data(proc, c: cal.Calibration, s: sm.HandSmoother):
+def serialize_proc_data(proc, s: sm.HandSmoother):
     if not proc["valid"]:
         return None
     res = {}
     res["g"] = serialize_gesture(proc["gesture"], proc["gesture_score"])
     res["ht"] = 0 if proc["hand_type"] == "Left" else 1
+    res["hp"] = cal.normalize( *proc["hand_position"] )
 
-    res["ib"] = 1
-    res["hp"] = proc["hand_position"]
 
     # updated handposition and bound checker
     # res["hp"], res["ib"] = c.normalize_and_check(*proc["hand_position"])

@@ -1,25 +1,26 @@
 # Process Result Data Format
-- gesture (g) | GESTURE_ENUM
+- gesture (g) | GESTURE_ENUM <-- only 2
     - NONE: 0
     - PINCH: 1
     - FIST: 2
     - OPEN: 3
-- hand_type (ht) | HAND_TYPE_ENUM
+- hand_type (ht) | HAND_TYPE_ENUM <-- left or right (we can add 2)
     - LEFT_HAND: 0
     - RIGHT_HAND: 1
-- hand_position (hp)
+- hand_position (hp) <-- just send media pipe no processing
     - Vector3(float, float, float)
         - x, y coordinates
 
 - in_bounds (ib) | IN_BOUNDS_ENUM
     - OUT | 0
     - IN | 1
-
 - valid | int | dont need
     - 0 for valid packet 1 for not valid
 - hand_landmarks | Vector3[] | dont need
     - positions for each landmark
 
+# HASH FOR GOOD VERSION
+e481edf3461e0419ef90465a33360ec5dcb932c4
 
 ## Example:
 ```py
