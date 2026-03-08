@@ -10,9 +10,8 @@ extends Node3D
 var holder: Node3D = null
 var is_held: bool = false
 
-## Traverses up the scene tree from the given node to find a Tool.
-## Use this when collision/area callbacks give you a RigidBody3D or Area3D
-## that is a descendant of a Tool.
+# goes up the scene tree from the given node to find a Tool
+# same reason as the ingredient one
 static func find_from_node(node: Node) -> Tool:
 	var current := node
 	while current:
@@ -26,7 +25,6 @@ func _ready() -> void:
 		rigid_body = _find_rigid_body()
 	if hit_area == null and rigid_body:
 		hit_area = rigid_body.get_node_or_null("Area3D")
-
 	if hit_area:
 		hit_area.body_entered.connect(_on_hit_body_entered)
 		hit_area.area_entered.connect(_on_hit_area_entered)
@@ -54,42 +52,45 @@ func _on_hit_ingredient(ingredient: Ingredient) -> void:
 # Override in subclasses if needed
 func disable_physics() -> void:
 	if rigid_body:
+		#rigid_body.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 		rigid_body.freeze = true
 
 func enable_physics() -> void:
 	if rigid_body:
 		rigid_body.freeze = false
+		rigid_body.freeze_mode = RigidBody3D.FREEZE_MODE_STATIC
 
 func pick_up(new_holder: Node3D, hold_point: Node3D) -> void:
 	holder = new_holder
 	is_held = true
+	var bscale := scale
 
 	disable_physics()
 	if rigid_body:
 		rigid_body.linear_velocity = Vector3.ZERO
 		rigid_body.angular_velocity = Vector3.ZERO
 
+	# reparent to the hold_point
+	# use keep_global_transform=false so we can set
+	# position/rotation in hold_point s local space;
 	if get_parent():
-		get_parent().remove_child(self)
-	hold_point.add_child(self)
-	position = hold_offset_position
-	rotation = Vector3(
+		reparent(hold_point, false)
+	# Set our local transform relative to the hand
+	var rot_rad := Vector3(
 		deg_to_rad(hold_offset_rotation.x),
 		deg_to_rad(hold_offset_rotation.y),
 		deg_to_rad(hold_offset_rotation.z)
 	)
+	transform = Transform3D(Basis.from_euler(rot_rad), hold_offset_position)
+	scale = bscale
 
 func drop(drop_parent: Node) -> void:
 	if not is_held:
 		return
 
-	var world_transform_cache := global_transform
-
+	# Reparent back to world 
 	if get_parent():
-		get_parent().remove_child(self)
-
-	drop_parent.add_child(self)
-	global_transform = world_transform_cache
+		reparent(drop_parent, true)
 
 	holder = null
 	is_held = false

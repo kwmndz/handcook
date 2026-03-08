@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/rigidBodies/lettuceRigid.tscn" id="1_ydwxi"]
 [ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/ingredients/lettuce.gd" id="2_lettuce"]
 
-[node name="Lettuce" type="Node3D" unique_id=1919175474 node_paths=PackedStringArray("default_visual", "chopped_visual")]
+[node name="Lettuce2" type="Node3D" unique_id=1919175474 node_paths=PackedStringArray("default_visual", "chopped_visual", "overcooked_visual")]
 script = ExtResource("2_lettuce")
 default_visual = NodePath("Lettuce/default-lettuce")
 chopped_visual = NodePath("Lettuce/chopped-lettuce")
+overcooked_visual = NodePath("Lettuce/overcooked-lettuce")
 
 [node name="Lettuce" parent="." unique_id=1563948761 instance=ExtResource("1_ydwxi")]

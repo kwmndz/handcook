@@ -60,7 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.02
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893573)
 
 [node name="Knife" parent="." unique_id=1230016347 instance=ExtResource("7_mwgec")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.1451066, 0.9551883, 4.1030536)
+transform = Transform3D(0.016322998, 0.2995556, 0, -0.2995556, 0.016322998, 0, 0, 0, 0.29999998, -2.5290115, 0.7389641, 4.412452)
 
 [node name="Lettuce" parent="." unique_id=1919175474 instance=ExtResource("2_ygy31")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.866682, 0.673151, 4.3261013)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.1230495, 1.2412676, 4.3299713)
