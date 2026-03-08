@@ -1,3 +1,4 @@
+class_name Lettuce
 extends Ingredient
 
 @export var default_visual: MeshInstance3D

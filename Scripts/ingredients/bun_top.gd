@@ -1,3 +1,4 @@
+class_name BunTop
 extends Ingredient
 
 func _ready() -> void:

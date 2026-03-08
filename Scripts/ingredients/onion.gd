@@ -1,3 +1,4 @@
+class_name Onion
 extends Ingredient
 
 @export var raw_visual: MeshInstance3D

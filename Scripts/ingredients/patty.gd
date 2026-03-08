@@ -1,3 +1,4 @@
+class_name Patty
 extends Ingredient
 
 @export var raw_visual: MeshInstance3D
