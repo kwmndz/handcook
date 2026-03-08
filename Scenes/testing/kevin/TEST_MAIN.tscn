@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cqh0uhfm3iwgj"]
 
 [ext_resource type="Script" uid="uid://cl732brjqr68t" path="res://Scripts/kevin_test/test_main.gd" id="1_frq2i"]
-[ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/lettuce.tscn" id="2_ygy31"]
+[ext_resource type="PackedScene" uid="uid://chhucosvw5swq" path="res://Assets/ingredients/lettuce.tscn" id="2_ygy31"]
 [ext_resource type="PackedScene" uid="uid://d0krehxoabvu8" path="res://Assets/scene_objects/workstation.tscn" id="4_cd61o"]
 [ext_resource type="PackedScene" uid="uid://dkn8jdi6a0u30" path="res://Assets/Mouse_Hand.tscn" id="4_ygy31"]
 [ext_resource type="PackedScene" uid="uid://bkenfv2m65dww" path="res://Assets/scene_objects/stove.tscn" id="5_osixi"]
 [ext_resource type="PackedScene" uid="uid://cjep7ovjdj0ny" path="res://Assets/scene_objects/cutting_board.tscn" id="6_mwgec"]
-[ext_resource type="PackedScene" uid="uid://cagsvaw62yjwg" path="res://Assets/tools/knife.tscn" id="7_mwgec"]
+[ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="7_mwgec"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6vbx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -42,15 +42,11 @@ size = Vector3(9.565811, 0.16699219, 8.889908)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1532116525]
 shape = SubResource("BoxShape3D_ygy31")
 
-[node name="Lettuce" parent="." unique_id=951881784 instance=ExtResource("2_ygy31")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -2.862981, 1.7099347, 3.9961824)
-isChoppable = true
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1572469465]
-transform = Transform3D(1, 0, 0, 0, 0.9490411, 0.31515217, 0, -0.31515217, 0.9490411, -3.0664206, 1.8700904, 6.0805354)
+transform = Transform3D(1, 0, 0, 0, 0.9490412, 0.3151522, 0, -0.3151522, 0.9490412, -3.0664206, 1.1204576, 5.138948)
 
 [node name="MouseHand" parent="." unique_id=60813729 node_paths=PackedStringArray("scene", "camera") instance=ExtResource("4_ygy31")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.15108824, 1.611028, 3.81941)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15108824, 1.611028, 3.81941)
 scene = NodePath("..")
 camera = NodePath("../Camera3D")
 
@@ -63,5 +59,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40309754, 0.52515095, 0.02
 [node name="cuttingBoard" parent="Workstation" unique_id=1888764547 instance=ExtResource("6_mwgec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4897085, 0.5230001, 0.15893573)
 
-[node name="Knife" parent="." unique_id=359082776 instance=ExtResource("7_mwgec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5164676, 0.9551884, 4.179848)
+[node name="Knife" parent="." unique_id=1230016347 instance=ExtResource("7_mwgec")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -2.1451066, 0.9551883, 4.1030536)
+
+[node name="Lettuce" parent="." unique_id=1919175474 instance=ExtResource("2_ygy31")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -2.866682, 0.673151, 4.3261013)

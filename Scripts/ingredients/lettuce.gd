@@ -20,6 +20,8 @@ func update_visual():
 	chopped_visual.visible = currentState == State.chopped
 
 func chop() -> void: 
+	if currentState != State.raw:
+		return
 	currentState = State.chopped
 	update_visual()
 	

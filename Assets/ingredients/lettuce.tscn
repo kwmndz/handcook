@@ -1,40 +1,11 @@
-[gd_scene format=3 uid="uid://ba2f5hosooxsg"]
+[gd_scene format=3 uid="uid://chhucosvw5swq"]
 
-[ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/ingredients/lettuce.gd" id="1_mmgdw"]
+[ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/rigidBodies/lettuceRigid.tscn" id="1_ydwxi"]
+[ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/ingredients/lettuce.gd" id="2_lettuce"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmgdw"]
-albedo_color = Color(0.13333334, 1, 0.043137256, 1)
+[node name="Lettuce" type="Node3D" unique_id=1919175474 node_paths=PackedStringArray("default_visual", "chopped_visual")]
+script = ExtResource("2_lettuce")
+default_visual = NodePath("Lettuce/default-lettuce")
+chopped_visual = NodePath("Lettuce/chopped-lettuce")
 
-[sub_resource type="SphereMesh" id="SphereMesh_03dh0"]
-material = SubResource("StandardMaterial3D_mmgdw")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03dh0"]
-albedo_color = Color(1, 1, 0.101960786, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_0kxm0"]
-material = SubResource("StandardMaterial3D_03dh0")
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_mmgdw"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_03dh0"]
-
-[node name="Lettuce" type="RigidBody3D" unique_id=1563948761 node_paths=PackedStringArray("default_visual", "chopped_visual")]
-script = ExtResource("1_mmgdw")
-default_visual = NodePath("default-lettuce")
-chopped_visual = NodePath("chopped-lettuce")
-
-[node name="default-lettuce" type="MeshInstance3D" parent="." unique_id=486756656]
-mesh = SubResource("SphereMesh_03dh0")
-
-[node name="chopped-lettuce" type="MeshInstance3D" parent="." unique_id=805668731]
-visible = false
-mesh = SubResource("SphereMesh_0kxm0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=237941037]
-shape = SubResource("SphereShape3D_mmgdw")
-
-[node name="InteractionCollision" type="Area3D" parent="." unique_id=511460840]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionCollision" unique_id=1708048643]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
-shape = SubResource("SphereShape3D_03dh0")
+[node name="Lettuce" parent="." unique_id=1563948761 instance=ExtResource("1_ydwxi")]
