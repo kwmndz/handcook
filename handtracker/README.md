@@ -11,6 +11,10 @@
     - Vector2(float, float)
         - x, y coordinates
 
+- in_bounds (ib) | IN_BOUNDS_ENUM
+    - OUT | 0
+    - IN | 1
+
 - valid | int | dont need
     - 0 for valid packet 1 for not valid
 - hand_landmarks | Vector2[] | dont need

@@ -2,7 +2,6 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 
-
 # load gesture tracking model
 MODEL_PATH = "gesture_recognizer.task"
 # params
@@ -42,18 +41,16 @@ def process_result(result):
         for hand_index, hand_landmarks in enumerate(result.hand_landmarks):
             # HAND LANDMARKS
             hl_pos = []
-            # calculate hand position by taking average of landmarks
-            hand_x = 0
-            hand_y = 0
             for landmark in hand_landmarks:
                 x = float(landmark.x)
                 y = float(landmark.y)
-                hand_x += x / 21
-                hand_y += y / 21
                 hl_pos.append( (x,y,) )
-
+            # test a few hand pos to see what is best
+            get_avg = lambda x: (sum([hl_pos[i][0] for i in x])/len(x), sum([hl_pos[i][1] for i in x])/len(x))
             result_proc["hand_landmarks"] = hl_pos
-            result_proc["hand_position"] = (hand_x, hand_y)
+            # result_proc["hand_position"] = get_avg([i for i in range])
+            result_proc["hand_position1"] = get_avg([0]) # cyan, base wrist
+            # result_proc["hand_position2"] = get_avg([0, 5, 9, 13, 17]) # purple, avg palm landmarks
 
             # GESTURES
             if result.gestures and len(result.gestures) > hand_index:
@@ -85,5 +82,5 @@ def serialize_proc_data(proc):
     res = {}
     res["g"] = serialize_gesture(proc["gesture"], proc["gesture_score"])
     res["ht"] = 0 if proc["hand_type"] == "Left" else 1
-    res["hp"] = proc["hand_position"]
+    res["hp"] = proc["hand_position1"]
     return res

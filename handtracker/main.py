@@ -38,6 +38,14 @@ while True:
     # DEBUG
     # if (frame_timestamp - last_debug_timestamp) > DEBUG_INTERVAL and result_proc["valid"]:
     if True and result_proc["valid"]:
+        # mark the global position of the hand
+        # g_x, g_y = result_proc["hand_position"]
+        # cv2.circle(frame, (int(g_x*cam.RES_WIDTH), int(g_y*cam.RES_HEIGHT)), 4, (0,0,255), -1)
+        g_x, g_y = result_proc["hand_position1"]
+        cv2.circle(frame, (int(g_x*cam.RES_WIDTH), int(g_y*cam.RES_HEIGHT)), 6, (255,255,0), -1)
+        # g_x, g_y = result_proc["hand_position2"]
+        # cv2.circle(frame, (int(g_x*cam.RES_WIDTH), int(g_y*cam.RES_HEIGHT)), 4, (128,0,128), -1)
+
         # mark each landmark
         for x, y in result_proc["hand_landmarks"]:
             cv2.circle(frame, (int(x*cam.RES_WIDTH),int(y*cam.RES_HEIGHT)), 4, (0,255,0), -1)
