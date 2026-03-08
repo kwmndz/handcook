@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cq70obk0b3nio"
-valid=false
+path="res://.godot/imported/jar_C_large.gltf-51ebb203f0df81dddf6fab3608ed2ea2.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/jar_C_large.gltf"
+dest_files=["res://.godot/imported/jar_C_large.gltf-51ebb203f0df81dddf6fab3608ed2ea2.scn"]
 
 [params]
 

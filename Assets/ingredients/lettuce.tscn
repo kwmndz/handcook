@@ -3,15 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ba2f5hosooxsg" path="res://Assets/ingredients/rigidBodies/lettuceRigid.tscn" id="1_ydwxi"]
 [ext_resource type="Script" uid="uid://cjpinum0l22m6" path="res://Scripts/ingredients/lettuce.gd" id="2_lettuce"]
 
-[node name="Lettuce2" type="Node3D" unique_id=1919175474 node_paths=PackedStringArray("default_visual", "chopped_visual", "overcooked_visual", "default_collision", "chopped_collision", "rigid_body")]
+[node name="Lettuce2" type="Node3D" unique_id=1919175474 node_paths=PackedStringArray("default_visual", "chopped_visual", "overcooked_visual", "overcooked_chopped_visual", "default_collision", "chopped_collision", "rigid_body", "smoke_particles")]
 script = ExtResource("2_lettuce")
 default_visual = NodePath("Lettuce/default-lettuce")
 chopped_visual = NodePath("Lettuce/chopped-lettuce")
 overcooked_visual = NodePath("Lettuce/default-lettuce-overcooked")
+overcooked_chopped_visual = NodePath("Lettuce/chopped-lettuce-overcooked")
 default_collision = NodePath("Lettuce/CollisionShape-Default")
 chopped_collision = NodePath("Lettuce/CollisionShape-Chopped")
 rigid_body = NodePath("Lettuce")
-hold_offset_position = Vector3(0, 0.25, 0)
+smoke_particles = NodePath("Lettuce/SmokeParticles")
 
 [node name="Lettuce" parent="." unique_id=1563948761 instance=ExtResource("1_ydwxi")]
 

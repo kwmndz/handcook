@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d1151atst3mfy"
-valid=false
+path="res://.godot/imported/wall_orderwindow.gltf-b86abcb2c3efa7505b8ae9b6be60dbb5.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/wall_orderwindow.gltf"
+dest_files=["res://.godot/imported/wall_orderwindow.gltf-b86abcb2c3efa7505b8ae9b6be60dbb5.scn"]
 
 [params]
 

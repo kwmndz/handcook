@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dnv8r6ll4d36l"
-valid=false
+path="res://.godot/imported/knife.gltf-48fd92194de800733bb5788cbf7be821.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/knife.gltf"
+dest_files=["res://.godot/imported/knife.gltf-48fd92194de800733bb5788cbf7be821.scn"]
 
 [params]
 

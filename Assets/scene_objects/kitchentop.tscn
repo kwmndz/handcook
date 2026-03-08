@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ddtw72338lx8l"]
+
+[ext_resource type="ArrayMesh" uid="uid://02wb4g7sxwqd" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/oven.obj" id="1_r0r0h"]
+[ext_resource type="ArrayMesh" uid="uid://doa0qhda3og3x" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/stove_multi_countertop.obj" id="2_jov2r"]
+[ext_resource type="ArrayMesh" uid="uid://c445clehdj7jd" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchencounter_straight_B.obj" id="3_ukjht"]
+[ext_resource type="ArrayMesh" uid="uid://bb2jdbbqq32nl" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchencounter_straight_B_backsplash.obj" id="4_40lxh"]
+[ext_resource type="ArrayMesh" uid="uid://dme7bb2ifdlfp" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchencounter_innercorner_backsplash.obj" id="5_gvlts"]
+[ext_resource type="ArrayMesh" uid="uid://c6bpdwed2swim" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/kitchencounter_straight_A_backsplash.obj" id="6_h1tbm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h1tbm"]
+size = Vector3(5.7113647, 2.022461, 3.6839905)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h1tbm"]
+radius = 0.09472656
+height = 5.9731445
+
+[node name="kitchentop" type="Node3D" unique_id=123582400]
+
+[node name="RigidBody3D" type="StaticBody3D" parent="." unique_id=778457526]
+
+[node name="Oven" type="MeshInstance3D" parent="RigidBody3D" unique_id=1720965810]
+mesh = ExtResource("1_r0r0h")
+
+[node name="StoveMultiCountertop" type="MeshInstance3D" parent="RigidBody3D" unique_id=598854016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008489847, 0.98654747, -0.00641346)
+mesh = ExtResource("2_jov2r")
+
+[node name="KitchencounterStraightB" type="MeshInstance3D" parent="RigidBody3D" unique_id=1295397050]
+transform = Transform3D(1, 0, 0, 0, 2.1318903, 0, 0, 0, 1, 1.953862, -0.11497986, -0.006852746)
+mesh = ExtResource("3_ukjht")
+
+[node name="KitchencounterStraightBBacksplash" type="MeshInstance3D" parent="RigidBody3D" unique_id=763583661]
+transform = Transform3D(1.9702382, 0, 0, 0, 1, 0, 0, 0, 1, 0.96602297, 1.0199134, -1.9527223)
+mesh = ExtResource("4_40lxh")
+
+[node name="KitchencounterInnercornerBacksplash" type="MeshInstance3D" parent="RigidBody3D" unique_id=1753769554]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.9929302, 1.0283434, -1.949862)
+mesh = ExtResource("5_gvlts")
+
+[node name="KitchencounterStraightABacksplash" type="MeshInstance3D" parent="RigidBody3D" unique_id=673069711]
+transform = Transform3D(-4.371139e-08, 0, 1.0276922, 0, 1, 0, -1, 0, -4.492185e-08, -1.9576788, 1.0194933, -0.0130780935)
+mesh = ExtResource("6_h1tbm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1080225765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08585119, 1.0115862, -0.8714752)
+shape = SubResource("BoxShape3D_h1tbm")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=569282982]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.886728, 2.1510653, 0.23615098)
+shape = SubResource("CapsuleShape3D_h1tbm")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody3D" unique_id=349157548]
+transform = Transform3D(-4.371139e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, 4.371139e-08, 1.9106855e-15, -0.016276598, 2.1510653, -2.869192)
+shape = SubResource("CapsuleShape3D_h1tbm")

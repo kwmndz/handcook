@@ -12,7 +12,7 @@ signal on_action(ingredient: Ingredient)
 @export var min_depth := 0
 @export var max_depth := 10.0
 
-@onready var bound_size: Vector3 = ($Bound.shape as BoxShape3D).size
+#@onready var bound_size: Vector3 = ($Bound.shape as BoxShape3D).size
 
 var held_tool: Tool = null
 var held_ingredient: Ingredient = null
@@ -23,7 +23,7 @@ var hovered_tool: Tool = null
 
 # Tool interaction helper functions
 func pick_up_tool(tool: Tool) -> void:
-	if held_tool != null:
+	if held_ingredient != null or held_tool != null:
 		return
 
 	held_tool = tool
@@ -37,7 +37,7 @@ func drop_tool(drop_parent: Node) -> void:
 	held_tool = null
 	
 func pick_up_ingredient(ingredient: Ingredient) -> void:
-	if held_ingredient != null:
+	if held_ingredient != null or held_tool != null:
 		return
 
 	held_ingredient = ingredient
@@ -71,7 +71,7 @@ func _input(event: InputEvent) -> void:
 	if  event.is_action_pressed("grab"):
 		if (hovered_tool):
 			pick_up_tool(hovered_tool)
-		if (hovered_ingredient):
+		elif (hovered_ingredient):
 			pick_up_ingredient(hovered_ingredient)
 	if event.is_action_released("grab"):
 		if held_tool != null:
@@ -82,13 +82,18 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if camera == null:
 		return
-	var target_pos = $Server.hand_rel_pos * bound_size - (bound_size / 2)
-	print("REL ", $Server.hand_rel_pos)
-	print("TARGET ", target_pos)
-	print("POS ", position)
-	
-	position = position.lerp(target_pos, delta * move_speed)
-	#global_position = global_position.lerp(target_pos, delta * move_speed)
+
+	var mouse_pos: Vector2
+	if Input.is_action_pressed("depth_mod"):
+		mouse_pos = frozen_mouse_pos
+	else:
+		mouse_pos = get_viewport().get_mouse_position()
+
+	var ray_origin = camera.project_ray_origin(mouse_pos)
+	var ray_dir = camera.project_ray_normal(mouse_pos)
+
+	var target_pos = ray_origin + ray_dir * depth
+	global_position = global_position.lerp(target_pos, delta * move_speed)
 
 # Collision detection for interacting with objects
 func _on_area_entered(area: Area3D) -> void:

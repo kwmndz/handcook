@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://q1yirwqdmwx1"
-valid=false
+path="res://.godot/imported/mustard.gltf-3af5f8c69bfcc1d025253dcbbf51fe20.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/mustard.gltf"
+dest_files=["res://.godot/imported/mustard.gltf-3af5f8c69bfcc1d025253dcbbf51fe20.scn"]
 
 [params]
 

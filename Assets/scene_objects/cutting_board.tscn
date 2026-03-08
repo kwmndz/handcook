@@ -9,6 +9,7 @@ albedo_color = Color(0.6710263, 0.37253308, 0.15243027, 1)
 size = Vector3(0.6542969, 0.064453125, 0.36132813)
 
 [node name="cuttingBoard" type="CSGBox3D" unique_id=1888764547]
+use_collision = true
 size = Vector3(0.65319824, 0.046, 0.36694336)
 material = SubResource("StandardMaterial3D_gcbj8")
 script = ExtResource("1_mrm3c")

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cc7xib5evl2yv"
-valid=false
+path="res://.godot/imported/food_ingredient_lettuce_slice.gltf-9c858042092026d4f146ebe8a2a89a73.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_lettuce_slice.gltf"
+dest_files=["res://.godot/imported/food_ingredient_lettuce_slice.gltf-9c858042092026d4f146ebe8a2a89a73.scn"]
 
 [params]
 

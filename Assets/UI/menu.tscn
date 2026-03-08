@@ -4,6 +4,11 @@
 [ext_resource type="Script" uid="uid://n5s8skycgcsb" path="res://Scripts/UI/spawn_button.gd" id="2_spawnbtn"]
 [ext_resource type="PackedScene" uid="uid://chhucosvw5swq" path="res://Assets/ingredients/lettuce.tscn" id="3_lettuce"]
 [ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="4_knife"]
+[ext_resource type="PackedScene" uid="uid://cp48hdtn2dk5s" path="res://Assets/ingredients/bun.tscn" id="5_bun"]
+[ext_resource type="PackedScene" uid="uid://4apsb83g6lwe" path="res://Assets/ingredients/bunTop.tscn" id="6_buntop"]
+[ext_resource type="PackedScene" uid="uid://t62q0fpek22x" path="res://Assets/ingredients/patty.tscn" id="7_patty"]
+[ext_resource type="PackedScene" uid="uid://driaangm1h828" path="res://Assets/ingredients/onion.tscn" id="8_onion"]
+[ext_resource type="PackedScene" uid="uid://orhgck21hxu7" path="res://Assets/ingredients/cheese.tscn" id="9_cheese"]
 
 [node name="menu" type="Control" unique_id=1131703700]
 layout_mode = 3
@@ -51,7 +56,6 @@ text = "Lettuce"
 script = ExtResource("2_spawnbtn")
 scene_to_spawn = ExtResource("3_lettuce")
 spawn_position = Vector3(-3.0633972, 1.2412676, 4.130141)
-spawn_scale = Vector3(0.25, 0.25, 0.25)
 
 [node name="Button2" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=1747243351]
 custom_minimum_size = Vector2(125, 100)
@@ -60,27 +64,41 @@ text = "Knife"
 script = ExtResource("2_spawnbtn")
 scene_to_spawn = ExtResource("4_knife")
 spawn_position = Vector3(-2.5290115, 0.7389641, 4.412452)
-spawn_scale = Vector3(0.3, 0.3, 0.3)
 
 [node name="Button3" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=597952140]
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
+text = "Bun Bottom"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("5_bun")
 
 [node name="Button4" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=78328990]
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
+text = "Bun Top"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("6_buntop")
 
 [node name="Button5" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=535254621]
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
+text = "Patty"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("7_patty")
 
 [node name="Button6" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=541168099]
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
+text = "Onion"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("8_onion")
 
 [node name="Button7" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=884581766]
 custom_minimum_size = Vector2(125, 100)
 layout_mode = 2
+text = "Cheese"
+script = ExtResource("2_spawnbtn")
+scene_to_spawn = ExtResource("9_cheese")
 
 [node name="Button8" type="Button" parent="VBoxContainer/Control/GridContainer" unique_id=218697815]
 custom_minimum_size = Vector2(125, 100)

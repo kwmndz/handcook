@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bu0swq8st3bxi"
-valid=false
+path="res://.godot/imported/pillar_A.gltf-816280d3d63d58221c54da047f893db3.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/pillar_A.gltf"
+dest_files=["res://.godot/imported/pillar_A.gltf-816280d3d63d58221c54da047f893db3.scn"]
 
 [params]
 

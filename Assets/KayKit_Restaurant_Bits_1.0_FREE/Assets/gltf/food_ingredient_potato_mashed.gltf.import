@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://f5qjbilp0jo5"
-valid=false
+path="res://.godot/imported/food_ingredient_potato_mashed.gltf-d3562604e4de5a41de9467454740e080.scn"
 
 [deps]
 
 source_file="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/food_ingredient_potato_mashed.gltf"
+dest_files=["res://.godot/imported/food_ingredient_potato_mashed.gltf-d3562604e4de5a41de9467454740e080.scn"]
 
 [params]
 

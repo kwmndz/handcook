@@ -1,3 +1,167 @@
 [gd_scene format=3 uid="uid://dr10xujs4rsj6"]
 
-[node name="Node3D" type="Node3D" unique_id=179882415]
+[ext_resource type="Script" uid="uid://c4nutxbm5uai3" path="res://Scripts/main.gd" id="1_21xkr"]
+[ext_resource type="PackedScene" uid="uid://bq3bhuoj1lgyn" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/gltf/floor_kitchen_small.gltf" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://ddtw72338lx8l" path="res://Assets/scene_objects/kitchentop.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://bkenfv2m65dww" path="res://Assets/scene_objects/stove.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://cjep7ovjdj0ny" path="res://Assets/scene_objects/cutting_board.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dqlkgapj5m1qw" path="res://Assets/scene_objects/garbage.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cw75w3rp10dc7" path="res://Assets/UI/canvas_layer.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://c0xlw2q4ugugd" path="res://Assets/tools/knife.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://cp48hdtn2dk5s" path="res://Assets/ingredients/bun.tscn" id="9_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://4apsb83g6lwe" path="res://Assets/ingredients/bunTop.tscn" id="10_wsu2k"]
+[ext_resource type="PackedScene" uid="uid://orhgck21hxu7" path="res://Assets/ingredients/cheese.tscn" id="11_k12tt"]
+[ext_resource type="PackedScene" uid="uid://chhucosvw5swq" path="res://Assets/ingredients/lettuce.tscn" id="12_h1bgf"]
+[ext_resource type="PackedScene" uid="uid://driaangm1h828" path="res://Assets/ingredients/onion.tscn" id="13_b3802"]
+[ext_resource type="PackedScene" uid="uid://t62q0fpek22x" path="res://Assets/ingredients/patty.tscn" id="14_fevyy"]
+[ext_resource type="PackedScene" uid="uid://bh50ysidn5uyx" path="res://Assets/scene_objects/creation_bin.tscn" id="15_wsu2k"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jjgbg"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_bo1nx"]
+sky_material = SubResource("ProceduralSkyMaterial_jjgbg")
+
+[sub_resource type="Environment" id="Environment_8gbba"]
+background_mode = 2
+sky = SubResource("Sky_bo1nx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjgbg"]
+size = Vector3(10.024414, 1, 10.032227)
+
+[node name="main" type="Node3D" unique_id=179882415]
+script = ExtResource("1_21xkr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1178183658]
+environment = SubResource("Environment_8gbba")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1241749358]
+transform = Transform3D(0.99770683, 0.05861641, -0.03384226, -0.01680492, 0.6988709, 0.7150504, 0.065565065, -0.71284187, 0.6982533, 1.5399103, 7.7470055, 6.618537)
+shadow_enabled = true
+
+[node name="floor" type="Node3D" parent="." unique_id=2048170067]
+
+[node name="floor_kitchen_small2" parent="floor" unique_id=546394616 instance=ExtResource("1_jjgbg")]
+
+[node name="floor_kitchen_small3" parent="floor" unique_id=1758480322 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="floor_kitchen_small4" parent="floor" unique_id=1031407829 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="floor_kitchen_small5" parent="floor" unique_id=168193787 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="floor_kitchen_small6" parent="floor" unique_id=680784115 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floor_kitchen_small7" parent="floor" unique_id=1151084394 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="floor_kitchen_small8" parent="floor" unique_id=461577687 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="floor_kitchen_small9" parent="floor" unique_id=217075194 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="floor_kitchen_small10" parent="floor" unique_id=1940111380 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
+
+[node name="floor_kitchen_small11" parent="floor" unique_id=1294283150 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+
+[node name="floor_kitchen_small22" parent="floor" unique_id=1822421837 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="floor_kitchen_small23" parent="floor" unique_id=698432610 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="floor_kitchen_small24" parent="floor" unique_id=738566141 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="floor_kitchen_small25" parent="floor" unique_id=2002201371 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+
+[node name="floor_kitchen_small26" parent="floor" unique_id=826234035 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="floor_kitchen_small12" parent="floor" unique_id=1953923037 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="floor_kitchen_small13" parent="floor" unique_id=681615986 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+
+[node name="floor_kitchen_small14" parent="floor" unique_id=1967807725 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -2)
+
+[node name="floor_kitchen_small15" parent="floor" unique_id=365001426 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2)
+
+[node name="floor_kitchen_small16" parent="floor" unique_id=1107874973 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2)
+
+[node name="floor_kitchen_small17" parent="floor" unique_id=582590656 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="floor_kitchen_small18" parent="floor" unique_id=1725347678 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4)
+
+[node name="floor_kitchen_small19" parent="floor" unique_id=1548976024 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4)
+
+[node name="floor_kitchen_small20" parent="floor" unique_id=1783953360 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="floor_kitchen_small21" parent="floor" unique_id=1828461371 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="RigidBody3D" type="StaticBody3D" parent="floor" unique_id=1698561482]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/RigidBody3D" unique_id=1329236388]
+shape = SubResource("BoxShape3D_jjgbg")
+
+[node name="kitchentop" parent="." unique_id=123582400 instance=ExtResource("2_bo1nx")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.615, 0)
+
+[node name="stove" parent="kitchentop" unique_id=1575896227 instance=ExtResource("3_8gbba")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.017964602, 2.206811, -0.010389089)
+size = Vector3(1.6286621, 0.046, 1.6026611)
+
+[node name="cuttingBoard" parent="kitchentop" unique_id=1888764547 instance=ExtResource("4_jjvhh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.9293392, 2.0458167, -0.24833785)
+size = Vector3(1.5702515, 0.046, 1.1878662)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=644290963]
+transform = Transform3D(-3.7855173e-08, 0.5, -0.8660254, 2.1855694e-08, 0.8660254, 0.5, 1, 0, -4.371139e-08, -3.2355323, 5.0238714, 0)
+
+[node name="Garbage" parent="." unique_id=1146456821 instance=ExtResource("5_kry3j")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -1.9677045, 0.5000005, -1.8214707)
+
+[node name="CanvasLayer" parent="." unique_id=1847888443 instance=ExtResource("7_6bp64")]
+
+[node name="Knife" parent="." unique_id=1230016347 instance=ExtResource("8_344ge")]
+transform = Transform3D(-1.1480458e-09, 0.026264226, 0.999655, -1, -4.371139e-08, 0, 4.3696307e-08, -0.999655, 0.026264226, 1.945159, 4.221182, -0.23703337)
+
+[node name="Bun" parent="." unique_id=1033514654 instance=ExtResource("9_jkdf5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087219596, 2.6378167, -2.1633103)
+
+[node name="bunTop" parent="." unique_id=1754159581 instance=ExtResource("10_wsu2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7252216, 2.6378167, -2.1562488)
+
+[node name="cheese" parent="." unique_id=1780306468 instance=ExtResource("11_k12tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.952961, 2.8892012, -0.96366966)
+
+[node name="Lettuce2" parent="." unique_id=1919175474 instance=ExtResource("12_h1bgf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9341917, 3.3346674, 0.5785214)
+
+[node name="onion" parent="." unique_id=1840735367 instance=ExtResource("13_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0396085, 3.0192323, 1.9897554)
+
+[node name="patty" parent="." unique_id=1961161194 instance=ExtResource("14_fevyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09555769, 2.8448107, -0.16020748)
+
+[node name="creationBin" parent="." unique_id=38894562 instance=ExtResource("15_wsu2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9416077, 1.8296591, 1.9728057)
