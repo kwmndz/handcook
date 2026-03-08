@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://ba2f5hosooxsg"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqxohjv7pnlcq" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_ingredient_lettuce.obj" id="1_b21hp"]
+[ext_resource type="ArrayMesh" uid="uid://s73fysxu4m3q" path="res://Assets/KayKit_Restaurant_Bits_1.0_FREE/Assets/obj/food_ingredient_lettuce_slice.obj" id="2_b720n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmgdw"]
+albedo_color = Color(0.13333334, 1, 0.043137256, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_03dh0"]
+material = SubResource("StandardMaterial3D_mmgdw")
+radius = 0.125
+height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03dh0"]
+albedo_color = Color(0.55359507, 0.30361837, 0.00023747713, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0kxm0"]
+material = SubResource("StandardMaterial3D_03dh0")
+radius = 0.125
+height = 0.25
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b720n"]
+radius = 2.1689453
+height = 4.3378906
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b21hp"]
+radius = 1.9003204
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b21hp"]
+albedo_color = Color(0.33, 0.13200001, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b720n"]
+size = Vector3(4.632324, 0.7661133, 4.3928833)
+
+[node name="Lettuce" type="RigidBody3D" unique_id=1563948761]
+
+[node name="default-lettuce-bak" type="MeshInstance3D" parent="." unique_id=486756656]
+visible = false
+mesh = SubResource("SphereMesh_03dh0")
+
+[node name="chopped-lettuce-bak" type="MeshInstance3D" parent="." unique_id=805668731]
+visible = false
+mesh = SubResource("SphereMesh_0kxm0")
+
+[node name="CollisionShape-Default" type="CollisionShape3D" parent="." unique_id=237941037]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.039914936, 0)
+shape = SubResource("CapsuleShape3D_b720n")
+
+[node name="InteractionCollision" type="Area3D" parent="." unique_id=511460840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionCollision" unique_id=1708048643]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.24342212, 0)
+visible = false
+shape = SubResource("SphereShape3D_b21hp")
+
+[node name="overcooked-lettuce" type="MeshInstance3D" parent="." unique_id=1131848819]
+visible = false
+mesh = SubResource("SphereMesh_0kxm0")
+
+[node name="default-lettuce" type="MeshInstance3D" parent="." unique_id=272998577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5847891, 0)
+mesh = ExtResource("1_b21hp")
+
+[node name="default-lettuce-overcooked" type="MeshInstance3D" parent="." unique_id=1316581916]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.585, 0)
+visible = false
+mesh = ExtResource("1_b21hp")
+surface_material_override/0 = SubResource("StandardMaterial3D_b21hp")
+
+[node name="chopped-lettuce" type="MeshInstance3D" parent="." unique_id=1958205219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46151656, 0.01118356)
+visible = false
+
+[node name="lettuce-slice" type="MeshInstance3D" parent="chopped-lettuce" unique_id=1934585425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07665816, 0, 0.06708348)
+mesh = ExtResource("2_b720n")
+
+[node name="lettuce-slice2" type="MeshInstance3D" parent="chopped-lettuce" unique_id=978696257]
+transform = Transform3D(1, 0, 0, 0, 0.9717348, 0.23607503, 0, -0.23607503, 0.9717348, -0.12966585, 0, -0.28156853)
+mesh = ExtResource("2_b720n")
+
+[node name="lettuce-slice3" type="MeshInstance3D" parent="chopped-lettuce" unique_id=1431647151]
+transform = Transform3D(0.9979573, 0.06332643, -0.008430857, -0.063603595, 0.99724555, -0.038151607, 0.005991622, 0.038610086, 0.99923646, 0.3415087, 0.044573106, -0.026305676)
+mesh = ExtResource("2_b720n")
+
+[node name="CollisionShape-Chopped" type="CollisionShape3D" parent="." unique_id=1526906552]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.09515381, -0.43529207, -0.12679291)
+shape = SubResource("BoxShape3D_b720n")

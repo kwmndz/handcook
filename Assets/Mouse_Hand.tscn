@@ -13,12 +13,13 @@ script = ExtResource("1_r4gnf")
 hold_point = NodePath("HoldPoint")
 
 [node name="hand_mesh" type="CSGBox3D" parent="." unique_id=787178696]
-size = Vector3(0.017822266, 0.01171875, 0.103271484)
+size = Vector3(0.054, 0.036, 0.309)
 material = SubResource("StandardMaterial3D_r4gnf")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=761051913]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=345407295]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_r4gnf")
 
 [node name="HoldPoint" type="Node3D" parent="." unique_id=155067972]
